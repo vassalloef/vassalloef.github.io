@@ -65,7 +65,7 @@ sections:
         - title: Undergraduate Researcher (Particle Theory)
           company: Brigham Young University
           company_url: 'https://physics.byu.edu/'
-          company_logo: org-byu
+  #       company_logo: org-byu
           location: Provo, Utah and Granville, Ohio
           date_start: '2023-06-01'
           date_end: ''
@@ -75,8 +75,8 @@ sections:
             - Focusing on expanding solution space of rotating Q-balls.
         - title: Undergraduate Researcher (AMO Experiment)
           company: Denison University
-          company_url: ''
-          company_logo: org-denison
+          company_url: 'https://denison.edu/academics/physics'
+  #       company_logo: org-denison
           location: Granville, Ohio
           date_start: '2021-05-01'
           date_end: '2023-05-31'
@@ -235,8 +235,8 @@ sections:
     content:
       title: Contact
       subtitle:
-  #     text: |-
-  #       Don't hesitate to reach out if you're interested in research.
+      text: |-
+        Don't hesitate to reach out.
       email: vassal_f1@denison.edu
   #     phone: 888 888 88 88
   #     appointment_url: 'https://calendly.com'
