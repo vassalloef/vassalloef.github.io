@@ -29,7 +29,7 @@ bio: I am a student interested in BSM particle pheno.
 
 # Interests to show in About widget
 interests:
-  - Dark matter theory and detection
+  - Dark matter
   - Particle phenomenology
   - Mathematical physics
   - Collider physics
@@ -54,19 +54,19 @@ social:
     link: '/#contact'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/vassalloef
+    link: https://twitter.com/vassalloef/
     label: Follow me on Twitter
     display:
       header: true
   - icon: github
     icon_pack: fab
-    link: https://github.com/vassalloef
+    link: https://github.com/vassalloef/
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/vassalloef
+    link: https://www.linkedin.com/vassalloef/
   - icon: orcid
     icon_pack: fab
-    link: https://orcid.org/0000-0002-0541-5606
+    link: https://orcid.org/0000-0002-0541-5606/
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
