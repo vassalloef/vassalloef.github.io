@@ -17,9 +17,9 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-  #  org_name: ''
-    description: 'Hi. I'm a student and researcher in high energy theory.'
-    twitter: 'vassalloef'
+    org_name: ''
+    description: ''
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
