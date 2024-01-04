@@ -9,7 +9,7 @@ appearance:
   theme_day: minimal
   theme_night: minimal
   font: minimal
-  font_size: L
+  font_size: M
 
 # SEO
 
@@ -17,7 +17,7 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: 'Fabrizio Vassallo'
+    org_name: ''
     description: 'Hi. I'm a student and researcher in high energy theory.'
     twitter: 'vassalloef'
   analytics:
