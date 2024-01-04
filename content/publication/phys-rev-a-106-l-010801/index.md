@@ -13,4 +13,6 @@ doi: 10.1103/PhysRevA.106.L010801
 links:
 - name: URL
   url: https://link.aps.org/doi/10.1103/PhysRevA.106.L010801
+featured: true
+summary: Lorem lorem ipsum ipsum
 ---
