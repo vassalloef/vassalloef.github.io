@@ -81,9 +81,9 @@ sections:
           date_start: '2021-05-01'
           date_end: '2023-05-31'
           description: |-
-            - Worked with Dr. Wes Walter on negative-ion threshold spectroscopy for two years, including two summers.
-            - Studied the isotope shifts in the electron affinity of lead, achieving most precise measurements in our lab's history.
-            - Traveled to colaborate at Stockholm University's DESIREE facility, studying lanthanum anion excited state lifetimes for laser cooling applications.
+            - Worked with [Dr. Wes Walter](https://denison.edu/people/wes-walter) on negative-ion threshold spectroscopy for two years, including two summers.
+            - Studied the isotope shifts in the electron affinity of lead, achieving most precise measurements in our lab's history (access paper below).
+            - Traveled to colaborate at Stockholm University's [DESIREE facility](https://www.desiree-infrastructure.com/), studying lanthanum anion excited state lifetimes for laser cooling applications.
     design:
       columns: '2'
   # - block: accomplishments
