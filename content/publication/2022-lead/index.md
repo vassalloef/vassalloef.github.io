@@ -11,7 +11,7 @@ publication_types:
 publication: '*Phys. Rev. A*'
 # doi: 10.1103/PhysRevA.106.L010801
 links:
-- name: 'Read it'
+- name: 'Read'
   url: https://link.aps.org/doi/10.1103/PhysRevA.106.L010801
 featured: true
 summary: Lorem lorem ipsum ipsum
