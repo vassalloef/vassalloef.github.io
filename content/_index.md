@@ -109,6 +109,15 @@ sections:
           organization_url: https://histsci.fas.harvard.edu/synthesis
           title: "Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math"
           url: https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2023-08-01'
+          description: "Join me in the latest issue of Radiations to recap my experience presenting research at PhysCon 2022, a trip that was loaded with fun events and outings in Washington, DC."
+          icon: org-aip
+          organization: "Featured by AIP's Radiations"
+          organization_url: https://www.aip.org/
+          title: "Science Comes to Life at PhysCon"
+          url: https://www.sigmapisigma.org/sigmapisigma/radiations/issues/spring-2023
     design:
       columns: '2'
   # - block: collection
