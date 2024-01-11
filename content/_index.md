@@ -87,49 +87,6 @@ sections:
             - Traveled to colaborate at Stockholm University's [DESIREE facility](https://www.desiree-infrastructure.com/), studying lanthanum anion excited state lifetimes for laser cooling applications.
     design:
       columns: '2'
-  - block: writing
-    id: writing
-    content:
-      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-      title: 'Writing'
-      subtitle:
-      # Date format: https://docs.hugoblox.com/customization/#date-format
-      date_format: Jan 2006
-      # Accomplishments.
-      #   Add/remove as many `item` blocks below as you like.
-      #   `title`, `organization`, and `date_start` are the required parameters.
-      #   Leave other parameters empty if not required.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - certificate_url: ''
-          date_end: ''
-          date_start: '2023-06-01'
-          description: "Feared by some and admired by others, math has shaped our lives in ways beyond imagination. In this academic article, I explore the effects of powerful math on one of history's most fascinating conflicts: the modern synthesis of biology."
-          icon: org-harvard
-          organization: "Featured by Harvard University's Synthesis"
-          organization_url: https://histsci.fas.harvard.edu/synthesis
-          title: "Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math"
-          url: https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca
-        - certificate_url: ''
-          date_end: ''
-          date_start: '2023-08-01'
-          description: "Join me in the latest issue of Radiations to recap my experience presenting research at PhysCon 2022, a trip that was loaded with fun events and outings in Washington, DC."
-          icon: org-aip
-          organization: "Featured by AIP's Radiations"
-          organization_url: https://www.aip.org/
-          title: "Science Comes to Life at PhysCon"
-          url: https://www.sigmapisigma.org/sigmapisigma/radiations/issues/spring-2023
-        - certificate_url: ''
-          date_end: ''
-          date_start: '2022-05-01'
-          description: "It is the stories of the people around us that most deserve the spotlight. In this profile, I tell the story of my grandmother—from her family’s escape from a flood in her childhood to the charming story of how she met my grandfather."
-          icon: org-denison
-          organization: "Featured by Denison's Exile"
-          organization_url: https://digitalcommons.denison.edu/exile/
-          title: "The calm amidst the storm"
-          url: https://digitalcommons.denison.edu/exile/vol68/iss1/29/
-    design:
-      columns: '2'
   # - block: collection
   #   id: posts
   #   content:
@@ -203,6 +160,49 @@ sections:
     design:
       columns: '2'
       view: card
+  - block: writing
+    id: writing
+    content:
+      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
+      title: 'Writing'
+      subtitle:
+      # Date format: https://docs.hugoblox.com/customization/#date-format
+      date_format: Jan 2006
+      # Accomplishments.
+      #   Add/remove as many `item` blocks below as you like.
+      #   `title`, `organization`, and `date_start` are the required parameters.
+      #   Leave other parameters empty if not required.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2023-06-01'
+          description: "Feared by some and admired by others, math has shaped our lives in ways beyond imagination. In this academic article, I explore the effects of powerful math on one of history's most fascinating conflicts: the modern synthesis of biology."
+          icon: org-harvard
+          organization: "Featured by Harvard University's Synthesis"
+          organization_url: https://histsci.fas.harvard.edu/synthesis
+          title: "Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math"
+          url: https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2023-08-01'
+          description: "Join me in the latest issue of Radiations to recap my experience presenting research at PhysCon 2022, a trip that was loaded with fun events and outings in Washington, DC."
+          icon: org-aip
+          organization: "Featured by AIP's Radiations"
+          organization_url: https://www.aip.org/
+          title: "Science Comes to Life at PhysCon"
+          url: https://www.sigmapisigma.org/sigmapisigma/radiations/issues/spring-2023
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2022-05-01'
+          description: "It is the stories of the people around us that most deserve the spotlight. In this profile, I tell the story of my grandmother—from her family’s escape from a flood in her childhood to the charming story of how she met my grandfather."
+          icon: org-denison
+          organization: "Featured by Denison's Exile"
+          organization_url: https://digitalcommons.denison.edu/exile/
+          title: "The calm amidst the storm"
+          url: https://digitalcommons.denison.edu/exile/vol68/iss1/29/
+    design:
+      columns: '2'
   # - block: collection
   #   content:
   #     title: Recent Publications
