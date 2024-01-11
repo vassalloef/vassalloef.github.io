@@ -105,7 +105,7 @@ sections:
           date_start: '2023-06-01'
           description: Formulated informed blockchain models, hypotheses, and use cases.
           icon: edx
-          organization: edX
+          organization: 'Synthesis'
           organization_url: https://www.edx.org
           title: Blockchain Fundamentals
           url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
