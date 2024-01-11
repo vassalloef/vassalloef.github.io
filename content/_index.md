@@ -103,12 +103,12 @@ sections:
         - certificate_url: ''
           date_end: ''
           date_start: '2023-06-01'
-          description: Formulated informed blockchain models, hypotheses, and use cases.
-          icon: edx
-          organization: 'Synthesis'
-          organization_url: https://www.edx.org
-          title: Blockchain Fundamentals
-          url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+          description: "Feared by some and admired by others, math has shaped our lives in ways beyond imagination. In this academic article, I explore the effects of powerful math on one of history's most fascinating conflicts: the modern synthesis of biology."
+          icon: org-harvard
+          organization: "Featured by Harvard University's Synthesis"
+          organization_url: https://histsci.fas.harvard.edu/synthesis
+          title: "Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math"
+          url: https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca
     design:
       columns: '2'
   # - block: collection
