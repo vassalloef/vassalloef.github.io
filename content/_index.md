@@ -87,10 +87,11 @@ sections:
             - Traveled to colaborate at Stockholm University's [DESIREE facility](https://www.desiree-infrastructure.com/), studying lanthanum anion excited state lifetimes for laser cooling applications.
     design:
       columns: '2'
-  - block: accomplishments
+  - block: writing
+    id: writing
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-      title: 'Accomplish&shy;ments'
+      title: 'Writing'
       subtitle:
       # Date format: https://docs.hugoblox.com/customization/#date-format
       date_format: Jan 2006
@@ -118,6 +119,15 @@ sections:
           organization_url: https://www.aip.org/
           title: "Science Comes to Life at PhysCon"
           url: https://www.sigmapisigma.org/sigmapisigma/radiations/issues/spring-2023
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2022-05-01'
+          description: "It is the stories of the people around us that most deserve the spotlight. In this profile, I tell the story of my grandmother—from her family’s escape from a flood in her childhood to the charming story of how she met my grandfather."
+          icon: org-denison
+          organization: "Featured by Denison's Exile"
+          organization_url: https://digitalcommons.denison.edu/exile/
+          title: "The calm amidst the storm"
+          url: https://digitalcommons.denison.edu/exile/vol68/iss1/29/
     design:
       columns: '2'
   # - block: collection
