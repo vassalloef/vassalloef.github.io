@@ -102,7 +102,7 @@ sections:
       items:
         - certificate_url: ''
           date_end: ''
-          date_start: '2023'
+          date_start: '2023-06-01'
           description: Formulated informed blockchain models, hypotheses, and use cases.
           icon: edx
           organization: edX
