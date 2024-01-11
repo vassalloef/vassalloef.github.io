@@ -104,7 +104,7 @@ sections:
           date_end: ''
           date_start: '2023'
           description: "Feared by some and admired by others, math has shaped our lives in ways beyond imagination. In this academic article, I explore the effects of powerful math on one of history's most fascinating conflicts: the modern synthesis of biology."
-          icon: org-harvard.svg
+      #   icon: org-harvard.svg
           organization: edX
           organization_url: https://www.coursera.org
           title: 'Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math'
