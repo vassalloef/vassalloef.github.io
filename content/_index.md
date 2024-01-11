@@ -152,7 +152,7 @@ sections:
   - block: collection
     id: featured
     content:
-      title: Featured Publications
+      title: Publications
       filters:
         folders:
           - publication
@@ -197,7 +197,7 @@ sections:
           date_start: '2022-05-01'
           description: "It is the stories of the people around us that most deserve the spotlight. In this profile, I tell the story of my grandmother—from her family’s escape from a flood in her childhood to the charming story of how she met my grandfather."
           icon: org-denison
-          organization: "Featured by Denison's Exile"
+          organization: "Featured by Denison University's Exile"
           organization_url: https://digitalcommons.denison.edu/exile/
           title: "The calm amidst the storm"
           url: https://digitalcommons.denison.edu/exile/vol68/iss1/29/
