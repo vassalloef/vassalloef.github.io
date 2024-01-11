@@ -80,3 +80,7 @@ highlight_name: true
 
 I am a senior from Argentina studying physics and math. With three years of experience in experimental and theoretical physics research, my interests are in particle phenomenology beyond the standard model. My latest project, for my senior thesis, is focused on rotating Q-balls.
 {style="text-align: justify;"}
+
+links:
+- name: 'Read'
+  url: https://link.aps.org/doi/10.1103/PhysRevA.106.L010801
