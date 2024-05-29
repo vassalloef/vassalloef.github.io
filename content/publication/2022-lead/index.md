@@ -14,5 +14,5 @@ links:
 - name: 'Read'
   url: https://link.aps.org/doi/10.1103/PhysRevA.106.L010801
 featured: true
-summary: Lorem lorem ipsum ipsum
+summary: We made the best measurements to date of the electron affinities of the three most prevalent isotopes of lead. This also yielded three new values for the respective isotope shifts—i.e., differences in electron affinity between isotopes—and resolved a previous disagreement over their sizes.
 ---

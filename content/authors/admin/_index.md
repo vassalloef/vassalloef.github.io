@@ -17,12 +17,12 @@ last_name: Vassallo
 superuser: true
 
 # Role/position/tagline
-role: Undergraduate Researcher
+role: Incoming PhD Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Denison University
-    url: https://www.denison.edu/
+  - name: University of Wisconsin–Madison
+    url: https://www.physics.wisc.edu/
 
 # Short bio (displayed in user profile at end of posts)
 bio: I am a student interested in BSM particle pheno.
@@ -31,12 +31,15 @@ bio: I am a student interested in BSM particle pheno.
 interests:
   - Dark matter
   - Particle phenomenology
-  - Mathematical physics
   - Collider physics
+  - Mathematical physics
 
 # Education to show in About widget
 education:
   courses:
+    - course: Ph.D. in Physics
+      institution: University of Wisconsin–Madison
+      year: 2029 (Expected)
     - course: B.S. in Physics
       institution: Denison University
       year: 2024
@@ -58,12 +61,9 @@ social:
     label: Follow me on Twitter
     display:
       header: true
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/vassalloef/
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/vassalloef/
+    link: https://www.linkedin.com/in/vassalloef/
   - icon: orcid
     icon_pack: fab
     link: https://orcid.org/0000-0002-0541-5606/
@@ -78,5 +78,5 @@ social:
 highlight_name: true
 ---
 
-I am a senior from Argentina studying physics and math. With three years of experience in experimental and theoretical physics research, my interests are in particle phenomenology beyond the standard model. My latest project, for my senior thesis, is focused on rotating Q-balls.
+I am an incoming PhD student from Argentina studying theoretical physics. With over three years of experience in experimental and theoretical physics research, my interests are in particle phenomenology beyond the standard model. My latest project, for my senior thesis, was focused on rotating Q-balls.
 {style="text-align: justify;"}

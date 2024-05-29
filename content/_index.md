@@ -71,9 +71,10 @@ sections:
           date_start: '2023-06-01'
           date_end: ''
           description: |-
-            - Completed the summer REU program at BYU with [Dr. Chris Verhaaren](https://physics.byu.edu/department/directory/verhaaren). Collaboration continues as my senior thesis.
-            - Studying Q-balls, non-topological solitons arising from scalar fields with applications in dark matter theories.
-            - Focusing on expanding solution space of rotating Q-balls.
+            - Completed summer program at BYU with [Dr. Chris Verhaaren](https://physics.byu.edu/department/directory/verhaaren). Collaboration continues as my senior thesis.
+            - Studying Q-balls, non-topological solitons arising from scalar fields with applications in dark matter.
+            - Developed analytical model for Q-balls in two dimensions.
+            - Focusing on expanding the solution space of rotating Q-balls.
         - title: Undergraduate Researcher (AMO Experiment)
           company: Denison University
           company_url: 'https://denison.edu/academics/physics'
