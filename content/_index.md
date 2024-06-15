@@ -240,7 +240,7 @@ sections:
       subtitle:
       text: |-
         Don't hesitate to reach out.
-      email: vassal_f1@denison.edu
+      email: fevassallo@wisc.edu
   #     phone: 888 888 88 88
   #     appointment_url: 'https://calendly.com'
   #     address:
