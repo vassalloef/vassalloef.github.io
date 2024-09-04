@@ -69,12 +69,11 @@ sections:
   #       company_logo: org-byu
           location: Provo, Utah and Granville, Ohio
           date_start: '2023-06-01'
-          date_end: ''
+          date_end: '2024-05-01'
           description: |-
             - Completed summer program at BYU with [Dr. Chris Verhaaren](https://physics.byu.edu/department/directory/verhaaren). Collaboration continues as my senior thesis.
-            - Studying Q-balls, non-topological solitons arising from scalar fields with applications in dark matter.
-            - Developed analytical model for Q-balls in two dimensions.
-            - Focusing on expanding the solution space of rotating Q-balls.
+            - Studied Q-balls, non-topological solitons arising from scalar fields with applications in dark matter.
+            - Developed analytical model for static and rotating Q-balls in two dimensions.
         - title: Undergraduate Researcher (AMO Experiment)
           company: Denison University
           company_url: 'https://denison.edu/academics/physics'

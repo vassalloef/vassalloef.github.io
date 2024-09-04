@@ -17,7 +17,7 @@ last_name: Vassallo
 superuser: true
 
 # Role/position/tagline
-role: Incoming PhD Student
+role: PhD Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -78,5 +78,5 @@ social:
 highlight_name: true
 ---
 
-I am an incoming PhD student from Argentina studying theoretical physics. With over three years of experience in experimental and theoretical physics research, my interests are in particle phenomenology beyond the standard model. My latest project, for my senior thesis, was focused on rotating Q-balls.
+I am a PhD student from Argentina studying theoretical physics. With over three years of experience in experimental and theoretical physics research, my interests are in particle phenomenology beyond the standard model. My latest project, for my senior thesis, was focused on rotating Q-balls.
 {style="text-align: justify;"}
