@@ -56,16 +56,9 @@ sections:
   - block: accomplishments
     id: writing
     content:
-      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
       title: 'Writing'
       subtitle:
-      # Date format: https://docs.hugoblox.com/customization/#date-format
       date_format: Jan 2006
-      # Accomplishments.
-      #   Add/remove as many `item` blocks below as you like.
-      #   `title`, `organization`, and `date_start` are the required parameters.
-      #   Leave other parameters empty if not required.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
         - certificate_url: ''
           date_end: ''

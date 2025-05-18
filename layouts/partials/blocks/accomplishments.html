@@ -1,6 +1,6 @@
 {{/* Accomplishments block (expects items under .content.items) */}}
 
-{{ $items := .content.items | default (slice) }}
+{{ $items := .section.content.items | default (slice) }}
 {{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
 {{ if gt (len $items) 0 }}
