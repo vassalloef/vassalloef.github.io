@@ -10,6 +10,7 @@ design:
 
 sections:
   - block: resume-biography-3
+    id: about
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
@@ -31,6 +32,7 @@ sections:
           position: center
           parallax: false
   - block: markdown
+    id: research
     content:
       title: 'My Research'
       subtitle: ''
@@ -52,6 +54,7 @@ sections:
   #    view: article-grid
   #    columns: 2
   - block: collection
+    id: publications
     content:
       title: Recent Publications
       text: ""
