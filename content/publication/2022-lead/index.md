@@ -5,7 +5,7 @@ authors:
 - Fabrizio Vassallo
 - N. Daniel Gibson
 date: "2022-07-26T00:00:00Z"
-doi: "10.1103/PhysRevA.106.L010801"
+doi: ""
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).

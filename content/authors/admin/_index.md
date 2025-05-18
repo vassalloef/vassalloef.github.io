@@ -34,8 +34,6 @@ profiles:
     url: 'mailto:fevassallo@wisc.edu'
   - icon: academicons/inspire
     url: https://inspirehep.net/authors/2918992
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/vassalloef/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-0541-5606
 
