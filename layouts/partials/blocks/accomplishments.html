@@ -1,0 +1,49 @@
+{{/* Hugo Academic Accomplishments Block (archived) */}}
+{{- $items := .content.items | default (slice) -}}
+
+{{ if $items }}
+<section id="{{ .id }}" class="home-section wg-accomplishments">
+  <div class="container">
+    {{ with .content.title }}
+      <div class="row">
+        <div class="col-12 section-heading text-center">
+          <h1>{{ . }}</h1>
+        </div>
+      </div>
+    {{ end }}
+
+    <div class="row">
+      {{ range $items }}
+        <div class="col-lg-6">
+          <div class="card-simple">
+            {{ with .title }}
+              <h3 class="card-title">
+                {{ if .url }}
+                  <a href="{{ .url }}">{{ . }}</a>
+                {{ else }}
+                  {{ . }}
+                {{ end }}
+              </h3>
+            {{ end }}
+            {{ with .organization }}
+              <div class="card-subtitle">
+                {{ if .organization_url }}
+                  <a href="{{ .organization_url }}">{{ . }}</a>
+                {{ else }}
+                  {{ . }}
+                {{ end }}
+              </div>
+            {{ end }}
+            {{ with .date_start }}
+              <div class="card-date">{{ . }}</div>
+            {{ end }}
+            {{ with .description }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
