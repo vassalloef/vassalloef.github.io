@@ -15,7 +15,7 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Searching for Dark Matter Annihilation in the Sun with the IceCube Upgrade"
+publication: ""
 publication_short: ""
 
 abstract: The IceCube Upgrade will provide unprecedented sensitivity to dark matter particles annihilating in the core of the Sun. For dark matter candidates with spin-dependent couplings to nuclei and that annihilate significantly to tau leptons or neutrinos, we find that the IceCube Upgrade will be capable of testing parameter space that is beyond the reach of existing direct detection experiments. After calculating the sensitivity of the IceCube Upgrade to dark matter annihilation in the Sun, we explore dark matter models that could be tested by this experiment, identifying two classes of scenarios as promising targets for such searches.
@@ -26,7 +26,7 @@ abstract: The IceCube Upgrade will provide unprecedented sensitivity to dark mat
 tags:
 - publications
 
-featured: true
+featured: false
 
 links:
 - name: Abstract

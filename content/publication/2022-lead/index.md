@@ -5,7 +5,7 @@ authors:
 - Fabrizio Vassallo
 - N. Daniel Gibson
 date: "2022-07-26T00:00:00Z"
-doi: "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801"
+doi: "10.1103/PhysRevA.106.L010801"
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -22,10 +22,10 @@ tags:
 - publications
 featured: false
 
-# links:
-# - name: ""
-#   url: ""
-url_pdf: https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801
+links:
+- name: 'Abstract'
+  url: 'https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801'
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
