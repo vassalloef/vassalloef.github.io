@@ -1,10 +1,53 @@
-{{/* DEBUG version of accomplishments block to inspect .Params */}}
+{{/* Accomplishments block for HugoBlox landing page context */}}
 
-{{ warnf "📦 .Params: %#v" .Params }}
+{{ $items := .content.items | default (slice) }}
+{{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
-<section id="debug-accomplishments">
+{{ if gt (len $items) 0 }}
+<section id="{{ .id | default "accomplishments" }}" class="home-section wg-accomplishments">
   <div class="container">
-    <h1>Debug: accomplishments block</h1>
-    <p>If you're seeing this section, the template is at least loading.</p>
+    {{ with .content.title }}
+      <div class="row">
+        <div class="col-12 section-heading text-center">
+          <h1>{{ . }}</h1>
+        </div>
+      </div>
+    {{ end }}
+
+    <div class="row">
+      {{ range $items }}
+        <div class="col-lg-6">
+          <div class="card-simple">
+            {{ with .title }}
+              <h3 class="card-title">
+                {{ if $.url }}
+                  <a href="{{ $.url }}">{{ . }}</a>
+                {{ else }}
+                  {{ . }}
+                {{ end }}
+              </h3>
+            {{ end }}
+            {{ with .organization }}
+              <div class="card-subtitle">
+                {{ if $.organization_url }}
+                  <a href="{{ $.organization_url }}">{{ . }}</a>
+                {{ else }}
+                  {{ . }}
+                {{ end }}
+              </div>
+            {{ end }}
+            {{ with .date_start }}
+              <div class="card-date">{{ . }}</div>
+            {{ end }}
+            {{ with .description }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
   </div>
 </section>
+{{ else }}
+  {{ warnf "⚠️ [accomplishments] No items found at .content.items" }}
+{{ end }}
