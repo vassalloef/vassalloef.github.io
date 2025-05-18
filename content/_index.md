@@ -35,7 +35,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        I am interested in the areas of high-energy phenomenology, cosmology, and astroparticle physics, which essentially means that I want to understand the universe better at the most fundamental level.
+        I am interested in the areas of high-energy phenomenology, cosmology, and astroparticle physics, which essentially means that I want to understand the universe's creation and evolution mostly through the interactions of its most fundamental components—particles.
 
         My previous work includes studying dark matter models that could accumulate in the center of the Sun as well as exploring objects called Q-balls which could be at the center of various models of dark matter and baryogenesis.
     design:
