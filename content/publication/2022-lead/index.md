@@ -1,16 +1,11 @@
 ---
-title: "An example journal article"
+title: "Measurement of the electron affinity of lead and its isotope shifts"
 authors:
-- admin
-- Robert Ford
-author_notes:
-- "Equal contribution"
-- "Equal contribution"
-date: "2015-09-01T00:00:00Z"
-doi: ""
-
-# Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+- C. W. Walter
+- F. Vassallo
+- N. D. Gibson
+date: "2022-07-26T00:00:00Z"
+doi: "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801"
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -18,23 +13,20 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Source Themes, 1*(1)"
+publication: "Phys. Rev. A *106*, L010801"
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
-
-# Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+abstract: The electron affinities of the primary isotopes of lead have been precisely measured using photodetachment threshold spectroscopy. The relative cross sections for photodetachment from Pb− isotopes 206, 207, and 208 were observed using a tunable midinfrared optical parametric oscillator-amplifier to determine the ground-state binding energies. The isotope-averaged electron affinity of Pb was measured to be 356.723(7) meV, in excellent agreement with previous measurements. Furthermore, the isotope shifts in the electron affinities were determined to be −0.003(4) meV for $^206$Pb $^208$Pb and −0.002(4) meV for $^207$Pb $^208$Pb, providing insight to resolve previous discrepancies regarding the magnitude of these shifts.
 
 tags:
-- Source Themes
+- publications
 featured: false
 
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
+url_pdf: https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801
+url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -54,14 +46,14 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: []
+# projects: []
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
-slides: example
+# slides: example
 ---
 
 {{% callout note %}}
