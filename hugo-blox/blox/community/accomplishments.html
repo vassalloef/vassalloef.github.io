@@ -1,7 +1,6 @@
 {{/* Accomplishments block for HugoBlox using sections: and nested `content.items` */}}
 
-{{ $items := .Params.content.items | default (slice) }}
-{{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
+{{ warnf "📦 .Params: %#v" .Params }}
 
 {{ if gt (len $items) 0 }}
 <section id="{{ .Params.id | default "accomplishments" }}" class="home-section wg-accomplishments">
