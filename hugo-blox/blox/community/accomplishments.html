@@ -1,12 +1,12 @@
-{{/* Accomplishments block compatible with `sections:` (reads from .Params) */}}
+{{/* Accomplishments block for HugoBlox using sections: and nested `content.items` */}}
 
-{{ $items := .Params.items | default (slice) }}
+{{ $items := .Params.content.items | default (slice) }}
 {{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
 {{ if gt (len $items) 0 }}
 <section id="{{ .Params.id | default "accomplishments" }}" class="home-section wg-accomplishments">
   <div class="container">
-    {{ with .Params.title }}
+    {{ with .Params.content.title }}
       <div class="row">
         <div class="col-12 section-heading text-center">
           <h1>{{ . }}</h1>
@@ -50,5 +50,5 @@
   </div>
 </section>
 {{ else }}
-  {{ warnf "⚠️ [accomplishments] No items to render from .Params" }}
+  {{ warnf "⚠️ [accomplishments] No items found at .Params.content.items" }}
 {{ end }}
