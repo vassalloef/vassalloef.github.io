@@ -1,53 +1,10 @@
-{{/* Accomplishments block for HugoBlox using sections: and nested `content.items` */}}
+{{/* DEBUG version of accomplishments block to inspect .Params */}}
 
 {{ warnf "📦 .Params: %#v" .Params }}
 
-{{ if gt (len $items) 0 }}
-<section id="{{ .Params.id | default "accomplishments" }}" class="home-section wg-accomplishments">
+<section id="debug-accomplishments">
   <div class="container">
-    {{ with .Params.content.title }}
-      <div class="row">
-        <div class="col-12 section-heading text-center">
-          <h1>{{ . }}</h1>
-        </div>
-      </div>
-    {{ end }}
-
-    <div class="row">
-      {{ range $items }}
-        {{ warnf "📌 item: %v" . }}
-        <div class="col-lg-6">
-          <div class="card-simple">
-            {{ with .title }}
-              <h3 class="card-title">
-                {{ if $.url }}
-                  <a href="{{ $.url }}">{{ . }}</a>
-                {{ else }}
-                  {{ . }}
-                {{ end }}
-              </h3>
-            {{ end }}
-            {{ with .organization }}
-              <div class="card-subtitle">
-                {{ if $.organization_url }}
-                  <a href="{{ $.organization_url }}">{{ . }}</a>
-                {{ else }}
-                  {{ . }}
-                {{ end }}
-              </div>
-            {{ end }}
-            {{ with .date_start }}
-              <div class="card-date">{{ . }}</div>
-            {{ end }}
-            {{ with .description }}
-              <p>{{ . }}</p>
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
-    </div>
+    <h1>Debug: accomplishments block</h1>
+    <p>If you're seeing this section, the template is at least loading.</p>
   </div>
 </section>
-{{ else }}
-  {{ warnf "⚠️ [accomplishments] No items found at .Params.content.items" }}
-{{ end }}
