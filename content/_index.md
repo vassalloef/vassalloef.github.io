@@ -37,7 +37,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        I am interested in the areas of high-energy phenomenology, cosmology, and astroparticle physics, which essentially means that I want to understand the universe's creation and evolution mostly through the interactions of its most fundamental components—particles.
+        I am interested in the areas of high energy phenomenology, cosmology, and astroparticle physics, which means that I want to understand the evolution of the universe mostly through the interactions of its most fundamental components—particles.
 
         My previous work includes studying dark matter models that could accumulate in the center of the Sun as well as exploring objects called Q-balls which could be at the center of various models of dark matter and baryogenesis.
     design:
@@ -64,6 +64,42 @@ sections:
         exclude_featured: false
     design:
       view: citation
+  - block: accomplishments
+    id: writing
+    content:
+      title: 'Writing'
+      subtitle:
+      date_format: Jan 2006
+      items:
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2023-06-01'
+          description: "Feared by some and admired by others, math has shaped our lives in ways beyond imagination. In this academic article, I explore the effects of powerful math on one of history's most fascinating conflicts: the modern synthesis of biology."
+          icon: org-harvard
+          organization: "Featured by Harvard University's Synthesis"
+          organization_url: https://histsci.fas.harvard.edu/synthesis
+          title: "Powerful Math: What Biology's Modern Synthesis Reveals About the Twofold Nature of Math"
+          url: https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2023-08-01'
+          description: "Join me in the latest issue of Radiations to recap my experience presenting research at PhysCon 2022, a trip that was loaded with fun events and outings in Washington, DC."
+          icon: org-aip
+          organization: "Featured by AIP's Radiations"
+          organization_url: https://www.aip.org/
+          title: "Science Comes to Life at PhysCon"
+          url: https://www.sigmapisigma.org/sigmapisigma/radiations/issues/spring-2023
+        - certificate_url: ''
+          date_end: ''
+          date_start: '2022-05-01'
+          description: "It is the stories of the people around us that most deserve the spotlight. In this profile, I tell the story of my grandmother—from her family’s escape from a flood in her childhood to the charming story of how she met my grandfather."
+          icon: org-denison
+          organization: "Featured by Denison University's Exile"
+          organization_url: https://digitalcommons.denison.edu/exile/
+          title: "The calm amidst the storm"
+          url: https://digitalcommons.denison.edu/exile/vol68/iss1/29/
+    design:
+      columns: '2'
   #- block: collection
   #  id: talks
   #  content:
