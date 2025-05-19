@@ -1,9 +1,8 @@
 {{/* Accomplishments block for Hugo Blox sections system */}}
-{{ $section := .section | default . }}
-{{ $params := $section.content | default dict }}
+
+{{ $params := .content | default dict }}
 {{ $items := $params.items | default (slice) }}
 
-{{ warnf "[DEBUG] .Params.content = %#v" .Params.content }}
 {{ warnf "[DEBUG] $params = %#v" $params }}
 {{ warnf "[DEBUG] $items = %#v" $items }}
 
@@ -25,22 +24,10 @@
         <div class="col-lg-6">
           <div class="card-simple">
             {{ with .title }}
-              <h3 class="card-title">
-                {{ if .url }}
-                  <a href="{{ .url }}">{{ . }}</a>
-                {{ else }}
-                  {{ . }}
-                {{ end }}
-              </h3>
+              <h3 class="card-title">{{ . }}</h3>
             {{ end }}
             {{ with .organization }}
-              <div class="card-subtitle">
-                {{ if .organization_url }}
-                  <a href="{{ .organization_url }}">{{ . }}</a>
-                {{ else }}
-                  {{ . }}
-                {{ end }}
-              </div>
+              <div class="card-subtitle">{{ . }}</div>
             {{ end }}
             {{ with .date_start }}
               <div class="card-date">{{ . }}</div>
@@ -55,5 +42,5 @@
   </div>
 </section>
 {{ else }}
-  {{ warnf "⚠️  [accomplishments] No items found at $params.items" }}
+  {{ warnf "⚠️  [accomplishments] No items found at .content.items" }}
 {{ end }}
