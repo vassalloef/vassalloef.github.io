@@ -3,6 +3,10 @@
 {{ $params := $section.content | default dict }}
 {{ $items := $params.items | default (slice) }}
 
+{{ warnf "[DEBUG] .Params.content = %#v" .Params.content }}
+{{ warnf "[DEBUG] $params = %#v" $params }}
+{{ warnf "[DEBUG] $items = %#v" $items }}
+
 {{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
 {{ if gt (len $items) 0 }}
