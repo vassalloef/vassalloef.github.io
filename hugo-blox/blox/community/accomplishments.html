@@ -3,6 +3,8 @@
 {{ $params := .content | default dict }}
 {{ $items := $params.items | default (slice) }}
 
+{{ errorf "✅ accomplishments.html is being read by Hugo" }}
+
 {{ warnf "[DEBUG] $params = %#v" $params }}
 {{ warnf "[DEBUG] $items = %#v" $items }}
 
