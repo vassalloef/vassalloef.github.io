@@ -1,5 +1,6 @@
 {{/* Accomplishments block (expects items under .content.items) */}}
 
+{{ warnf "[debug] section = %+v" .section }}
 {{ $items := .section.content.items | default (slice) }}
 {{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
