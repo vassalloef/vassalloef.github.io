@@ -54,17 +54,10 @@ sections:
   #  design:
   #    view: article-grid
   #    columns: 3
-  - block: community/accomplishments
-    id: writing
+  - block: markdown
     content:
-      title: "Writing"
-      items:
-        - title: "Sample"
-          date_start: "2023-01-01"
-          organization: "Test"
-          description: "Hello"
-    design:
-      columns: "2"
+      title: Writing
+      text: ""
   - block: collection
     content:
       title: Recent Publications
