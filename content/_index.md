@@ -54,7 +54,7 @@ sections:
   #  design:
   #    view: article-grid
   #    columns: 3
-  - block: accomplishments
+  - block: community/accomplishments
     id: writing
     content:
       title: "Writing"
