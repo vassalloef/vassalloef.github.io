@@ -3,7 +3,6 @@
 title: ""
 date: 2022-10-24
 type: landing
-layout: landing
 
 design:
   # Default section spacing
@@ -53,11 +52,7 @@ sections:
   #      featured_only: true
   #  design:
   #    view: article-grid
-  #    columns: 3
-  - block: markdown
-    content:
-      title: Writing
-      text: ""
+  #    columns: 2
   - block: collection
     content:
       title: Recent Publications
