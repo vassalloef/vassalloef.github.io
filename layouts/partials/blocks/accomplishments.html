@@ -1,13 +1,14 @@
-{{/* Accomplishments block (expects items under .content.items) */}}
+{{/* Accomplishments block for Hugo Blox sections system */}}
+{{ $section := .section | default . }}
+{{ $params := $section.content | default dict }}
+{{ $items := $params.items | default (slice) }}
 
-{{ warnf "[debug] section = %+v" .section }}
-{{ $items := .section.content.items | default (slice) }}
 {{ warnf "💡 [accomplishments] rendering with %d item(s)" (len $items) }}
 
 {{ if gt (len $items) 0 }}
 <section id="{{ .id | default "accomplishments" }}" class="home-section wg-accomplishments">
   <div class="container">
-    {{ with .content.title }}
+    {{ with $params.title }}
       <div class="row">
         <div class="col-12 section-heading text-center">
           <h1>{{ . }}</h1>
@@ -21,8 +22,8 @@
           <div class="card-simple">
             {{ with .title }}
               <h3 class="card-title">
-                {{ if $.url }}
-                  <a href="{{ $.url }}">{{ . }}</a>
+                {{ if .url }}
+                  <a href="{{ .url }}">{{ . }}</a>
                 {{ else }}
                   {{ . }}
                 {{ end }}
@@ -30,8 +31,8 @@
             {{ end }}
             {{ with .organization }}
               <div class="card-subtitle">
-                {{ if $.organization_url }}
-                  <a href="{{ $.organization_url }}">{{ . }}</a>
+                {{ if .organization_url }}
+                  <a href="{{ .organization_url }}">{{ . }}</a>
                 {{ else }}
                   {{ . }}
                 {{ end }}
@@ -50,5 +51,5 @@
   </div>
 </section>
 {{ else }}
-  {{ warnf "⚠️ [accomplishments] No items found at .content.items" }}
+  {{ warnf "⚠️  [accomplishments] No items found at $params.items" }}
 {{ end }}
