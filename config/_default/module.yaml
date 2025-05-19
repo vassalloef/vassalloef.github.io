@@ -23,3 +23,5 @@ mounts:
     target: layouts
   - source: assets
     target: assets
+  - source: layouts/partials/blox/community
+    target: layouts/partials/blox/community
