@@ -6,16 +6,13 @@ authors:
 date: "2025-05-10T00:00:00Z"
 doi: ""
 
-# Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
-
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: ""
+publication: "Phys. Rev. D *112*, 035014"
 publication_short: ""
 
 abstract: The IceCube Upgrade will provide unprecedented sensitivity to dark matter particles annihilating in the core of the Sun. For dark matter candidates with spin-dependent couplings to nuclei and that annihilate significantly to tau leptons or neutrinos, we find that the IceCube Upgrade will be capable of testing parameter space that is beyond the reach of existing direct detection experiments. After calculating the sensitivity of the IceCube Upgrade to dark matter annihilation in the Sun, we explore dark matter models that could be tested by this experiment, identifying two classes of scenarios as promising targets for such searches.
