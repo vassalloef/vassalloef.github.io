@@ -1,0 +1,11 @@
+{
+  "id": "news-replace-with-stable-slug",
+  "kind": "coverage",
+  "paper": "paper-replace-with-confirmed-id",
+  "outlet": "REPLACE WITH VERIFIED OUTLET",
+  "date": "YYYY-MM-DD",
+  "url": "REPLACE WITH VERIFIED HTTPS ARTICLE URL",
+  "language": "en",
+  "en": {"headline": "REPLACE WITH VERIFIED HEADLINE", "summary": "Write a short accurate summary."},
+  "es": {"headline": "Escribe el título traducido.", "summary": "Escribe un breve resumen preciso."}
+}

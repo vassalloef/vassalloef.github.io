@@ -1,0 +1,102 @@
+{
+  "en": {
+    "title": "Our family tree",
+    "intro": "The people who came before me.",
+    "album": "Family album",
+    "all": "Everyone",
+    "maternal": "Mom’s side",
+    "paternal": "Dad’s side",
+    "branchLabel": "Choose a family branch",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit tree",
+    "zoom": "Tree zoom",
+    "explore": "Family tree. Scroll or use the arrow keys to explore.",
+    "hint": "Drag or swipe to explore",
+    "note": "Hover, focus, or tap a flag to see the birthplace.",
+    "birthplace": "Birthplace",
+    "countries": {
+      "AR": "Argentina",
+      "UY": "Uruguay",
+      "IT": "Italy",
+      "ES": "Spain"
+    },
+    "ancestors": "ancestors",
+    "generations": "generations",
+    "skip": "Skip to family tree",
+    "language": "Language",
+    "age": "Age",
+    "ageAtDeath": "Age at death",
+    "me": "Me",
+    "mother": [
+      "",
+      "Mom",
+      "Grandmother",
+      "Great-grandmother",
+      "Great-great-grandmother",
+      "3× great-grandmother",
+      "4× great-grandmother",
+      "5× great-grandmother"
+    ],
+    "father": [
+      "",
+      "Dad",
+      "Grandfather",
+      "Great-grandfather",
+      "Great-great-grandfather",
+      "3× great-grandfather",
+      "4× great-grandfather",
+      "5× great-grandfather"
+    ]
+  },
+  "es": {
+    "title": "Nuestro árbol familiar",
+    "intro": "Las personas que vinieron antes que yo.",
+    "album": "Álbum familiar",
+    "all": "Todos",
+    "maternal": "Familia de mamá",
+    "paternal": "Familia de papá",
+    "branchLabel": "Elegir una rama familiar",
+    "zoomIn": "Acercar",
+    "zoomOut": "Alejar",
+    "fit": "Ver todo",
+    "zoom": "Escala del árbol",
+    "explore": "Árbol familiar. Desplazate o usá las flechas para explorarlo.",
+    "hint": "Arrastrá o deslizá para explorar",
+    "note": "Pasá el cursor, enfocá o tocá una bandera para ver el lugar de nacimiento.",
+    "birthplace": "Lugar de nacimiento",
+    "countries": {
+      "AR": "Argentina",
+      "UY": "Uruguay",
+      "IT": "Italia",
+      "ES": "España"
+    },
+    "ancestors": "antepasados",
+    "generations": "generaciones",
+    "skip": "Ir al árbol familiar",
+    "language": "Idioma",
+    "age": "Edad",
+    "ageAtDeath": "Edad al fallecer",
+    "me": "Yo",
+    "mother": [
+      "",
+      "Mamá",
+      "Abuela",
+      "Bisabuela",
+      "Tatarabuela",
+      "Trastatarabuela",
+      "Antepasada · generación 6",
+      "Antepasada · generación 7"
+    ],
+    "father": [
+      "",
+      "Papá",
+      "Abuelo",
+      "Bisabuelo",
+      "Tatarabuelo",
+      "Trastatarabuelo",
+      "Antepasado · generación 6",
+      "Antepasado · generación 7"
+    ]
+  }
+}

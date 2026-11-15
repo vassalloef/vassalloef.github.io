@@ -1,0 +1,32 @@
+<svg class="schematic" viewBox="0 0 320 158" role="img" aria-label="{{ .alt }}" xmlns="http://www.w3.org/2000/svg">
+  {{ if eq .id "particles" }}
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="42" cy="41" r="11"/><circle cx="42" cy="100" r="11"/>
+      <path d="M53 44C77 44 89 70 117 70M53 96C77 96 89 70 117 70M117 70H172M172 70C202 70 211 43 242 43M172 70C202 70 211 97 242 97"/>
+      <circle cx="117" cy="70" r="5" fill="var(--primary)" stroke="var(--primary)"/>
+      <circle cx="172" cy="70" r="8" fill="var(--gold-soft)"/>
+      <path d="M247 46Q265 46 273 64M247 94Q265 94 273 77" stroke-dasharray="2 5"/>
+      <circle cx="282" cy="65" r="11" fill="var(--sky-deep)"/><circle cx="291" cy="82" r="11" fill="var(--sky)"/><circle cx="272" cy="82" r="11" fill="var(--gold-soft)"/>
+    </g>
+    <g class="svg-label"><text x="42" y="140" text-anchor="middle">{{ index .labels 0 }}</text><text x="166" y="140" text-anchor="middle">{{ index .labels 1 }}</text><text x="280" y="140" text-anchor="middle">{{ index .labels 2 }}</text></g>
+  {{ else if eq .id "gravity" }}
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <ellipse cx="35" cy="66" rx="11" ry="18" transform="rotate(-34 35 66)" fill="var(--gold-soft)"/><path d="m13 34 44 64"/>
+      <path d="M58 70 Q148 37 258 70"/><path d="M58 70H258" stroke-dasharray="3 5" opacity=".35"/>
+      <circle cx="166" cy="86" r="10" fill="var(--primary)" stroke="var(--primary)"/><circle cx="166" cy="86" r="24" stroke-dasharray="2 5" opacity=".5"/>
+      <circle cx="278" cy="70" r="17" fill="var(--sky-deep)"/><path d="M266 57q6 9 0 16q9 1 11 14m4-33q-1 12 13 14"/>
+    </g>
+    <g class="svg-label"><text x="35" y="140" text-anchor="middle">{{ index .labels 0 }}</text><text x="166" y="140" text-anchor="middle">{{ index .labels 1 }}</text><text x="278" y="140" text-anchor="middle">{{ index .labels 2 }}</text></g>
+  {{ else }}
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="18" y="25" width="62" height="40" rx="13" fill="var(--sky)"/><rect x="18" y="77" width="62" height="40" rx="13" fill="var(--sky-deep)"/>
+      <path d="M30 51q10-25 20-8t19-3M29 102q7-11 13-1t10-7 16 0"/>
+      <path d="M91 46C114 46 117 70 139 70M91 96C114 96 117 70 139 70M139 70H181M173 64l8 6-8 6"/>
+      <rect x="198" y="25" width="104" height="92" rx="23" fill="#f9fcff"/>
+      <ellipse cx="250" cy="71" rx="36" ry="20" transform="rotate(-27 250 71)" fill="var(--gold-soft)"/>
+      <ellipse cx="250" cy="71" rx="22" ry="12" transform="rotate(-27 250 71)"/>
+      <circle cx="250" cy="71" r="4" fill="var(--primary)" stroke="var(--primary)"/>
+    </g>
+    <g class="svg-label"><text x="49" y="16" text-anchor="middle">{{ index .labels 0 }}</text><text x="49" y="140" text-anchor="middle">{{ index .labels 1 }}</text><text x="251" y="140" text-anchor="middle">{{ index .labels 2 }}</text></g>
+  {{ end }}
+</svg>

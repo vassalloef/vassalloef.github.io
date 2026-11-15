@@ -1,0 +1,68 @@
+[
+  {
+    "id": "perspective-experiments",
+    "art": "experiments",
+    "en": {
+      "title": "A better signal model can change the search",
+      "summary": "Before judging what an experiment can discover, I want to understand whether we have modeled the right physical signal.",
+      "paragraphs": [
+        "Experiments cost years of work and shared resources. I think we owe them more than repeatedly testing the easiest signals to calculate. Sometimes the useful question is whether our benchmark models are hiding a different possibility.",
+        "In our antinuclei project, I followed that question from particle models through event simulations and the formation of antimatter nuclei. Giving the intermediate particles baryon number changes how antinucleons emerge together, and can substantially increase the production of antinuclei. That makes the microscopic modeling consequential for what an experiment might see.",
+        "This is the kind of research I want to do: build the chain from a physical idea to an observable signal, then examine where its predictions could matter. A promising mechanism still needs propagation and detector modeling before it becomes an explanation of data."
+      ]
+    },
+    "es": {
+      "title": "Un mejor modelo de la señal puede cambiar la búsqueda",
+      "summary": "pipipipipi de juzgar qué puede descubrir un experimento, quiero saber si estamos modelando la señal física que realmente importa.",
+      "paragraphs": [
+        "Los experimentos requieren años de trabajo y recursos compartidos. Creo que les debemos más que poner a prueba las señales más fáciles de calcular. A veces conviene preguntarse si los modelos de referencia ocultan otras posibilidades.",
+        "En nuestro proyecto de antinúcleos, seguí esa pregunta desde los modelos de partículas hasta las simulaciones y la formación de núcleos de antimateria. Dar número bariónico a las partículas intermedias cambia cómo emergen juntos los antinucleones y puede aumentar considerablemente la producción de antinúcleos. Así, el modelado microscópico afecta lo que un experimento podría observar.",
+        "Quiero hacer investigación que conecte una idea física con una señal observable y examine dónde importan sus predicciones. Un mecanismo prometedor todavía necesita modelos de propagación y del detector antes de convertirse en una explicación de los datos."
+      ]
+    }
+  },
+  {
+    "id": "perspective-machine-learning",
+    "art": "learning",
+    "en": {
+      "title": "Use machine learning to keep the physics",
+      "summary": "When faithful simulations are too expensive to repeat, learned models can make inference practical without discarding the signal’s important structure.",
+      "paragraphs": [
+        "In our pulsar timing project, building the simulator was only part of the problem. Inference requires exploring many possible signals, and repeatedly generating them directly can be prohibitively expensive. Simplifying away their non-Gaussian structure would make the calculation easier, but could change the question we were answering.",
+        "I developed the simulation code and implemented learned signal models, including normalizing flows and diffusion. These models serve different purposes: flows describe distributions of compressed signals, while diffusion can generate full timing signals efficiently. The aim is to preserve relevant physical structure while making the repeated calculations feasible.",
+        "That is what interests me about surrogates. They can connect a simulation we trust to an analysis we could otherwise struggle to perform. The responsibility is then to test the approximation where it matters for the scientific result."
+      ]
+    },
+    "es": {
+      "title": "Usar aprendizaje automático para conservar la física",
+      "summary": "Cuando repetir simulaciones fieles resulta demasiado costoso, los modelos aprendidos pueden hacer viable la inferencia sin descartar estructura importante.",
+      "paragraphs": [
+        "En nuestro proyecto con púlsares, construir el simulador era solo una parte del problema. La inferencia exige explorar muchas señales posibles, y generarlas directamente una y otra vez puede ser demasiado costoso. Eliminar su estructura no gaussiana simplificaría el cálculo, pero podría cambiar la pregunta que estábamos respondiendo.",
+        "Desarrollé el código de simulación e implementé modelos aprendidos de la señal, incluidos flujos normalizantes y difusión. Cumplen funciones distintas: los flujos describen distribuciones de señales comprimidas; la difusión permite generar señales temporales completas con eficiencia. Buscamos conservar la estructura física relevante y hacer viables los cálculos repetidos.",
+        "Eso me interesa de los modelos sustitutos: conectar una simulación fiable con un análisis que sería difícil realizar. La responsabilidad pasa entonces por comprobar la aproximación allí donde importa para el resultado científico."
+      ]
+    }
+  },
+  {
+    "id": "perspective-statistics",
+    "art": "statistics",
+    "en": {
+      "title": "A convenient statistic can answer the wrong question",
+      "summary": "Choosing a statistic means choosing which information survives. I want that choice to respect the physics and withstand validation.",
+      "paragraphs": [
+        "A statistic is a choice about what to keep from the data. I want to know what that choice costs before trusting the answer, especially when rare events shape the signal.",
+        "Our pulsar timing analysis offers a concrete example. Compressing timing residuals to a cubic coefficient is useful, but the same compression must be applied to the signal and background. Fitting only a cubic signal to the full data is a different model, and the distinction can matter. The calculation should acknowledge the information it discards.",
+        "This is why statistical rigor means more to me than adding an error bar. I want frameworks that expose their assumptions, test for bias, and check calibration against simulations with known truth. Probability–probability checks are one tool for asking whether the probabilities we report deserve their interpretation."
+      ]
+    },
+    "es": {
+      "title": "Un estadístico conveniente puede responder la pregunta equivocada",
+      "summary": "Elegir un estadístico implica decidir qué información sobrevive. Quiero que esa decisión respete la física y resista pruebas de validación.",
+      "paragraphs": [
+        "Un estadístico representa una decisión sobre qué conservar de los datos. Quiero entender su costo antes de confiar en la respuesta, especialmente cuando los eventos poco frecuentes definen la señal.",
+        "Nuestro análisis con púlsares ofrece un ejemplo concreto. Comprimir los residuos temporales a un coeficiente cúbico es útil, pero debemos aplicar la misma compresión a la señal y al fondo. Ajustar solo una señal cúbica a todos los datos representa otro modelo, y la diferencia puede importar. El cálculo debe reconocer la información que descarta.",
+        "Por eso, para mí el rigor estadístico va más allá de añadir una barra de error. Quiero marcos que expliciten sus supuestos, busquen sesgos y comprueben la calibración con simulaciones cuya verdad conocemos. Las pruebas de probabilidad–probabilidad permiten preguntar si las probabilidades que reportamos merecen su interpretación."
+      ]
+    }
+  }
+]

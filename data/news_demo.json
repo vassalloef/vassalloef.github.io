@@ -1,0 +1,13 @@
+[
+  {
+    "id": "news-demo",
+    "paper": "paper-antinuclei",
+    "outlet": "Demo fixture",
+    "date": "2026-10-31",
+    "url": "https://example.org/",
+    "language": "en",
+    "demo": true,
+    "en": {"headline": "A place for the story behind the science", "summary": "This local example demonstrates the link between a paper and its coverage. The real Phys.org headline, date, URL, and associated paper are still needed. This entry is excluded from normal and production builds."},
+    "es": {"headline": "Un espacio para la historia detrás de la ciencia", "summary": "Este ejemplo local demuestra la conexión entre un artículo y su cobertura. Aún faltan el título, la fecha, el enlace y el artículo asociado de Phys.org. Esta entrada no aparece en las compilaciones normales ni de producción."}
+  }
+]

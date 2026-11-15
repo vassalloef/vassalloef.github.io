@@ -1,0 +1,33 @@
+{{ $person := index .people .id }}
+{{ $t := .t }}
+{{ $role := $t.me }}
+{{ if gt .generation 0 }}{{ $role = index (index $t .relation) .generation }}{{ end }}
+<li class="ancestor-branch" data-person="{{ .id }}" data-generation="{{ .generation }}" data-side="{{ .side }}">
+  <article class="person{{ if eq .generation 0 }} person-root{{ end }}" aria-labelledby="name-{{ .path }}">
+    <div class="person-top"><span class="person-role">{{ $role }}</span>
+      {{ with $person.birthCountry }}
+        {{ $country := index $t.countries . | default . }}
+        {{ $place := $country }}
+        {{ with $person.birthPlace }}{{ $place = printf "%s, %s" . $country }}{{ end }}
+        <button type="button" class="birth-flag" data-country="{{ . }}" data-birthplace="{{ $place }}" aria-label="{{ $t.birthplace }} · {{ $person.name }}: {{ $place }}" title="{{ $place }}" aria-expanded="false" aria-controls="birthplace-tooltip">
+          {{ if in (slice "AR" "UY" "IT" "ES") . }}<img src="{{ printf "images/flags/%s.svg" (lower .) | relURL }}" alt="" width="34" height="24" aria-hidden="true">{{ else }}<span class="country-fallback" aria-hidden="true">{{ . }}</span>{{ end }}
+        </button>
+      {{ end }}
+    </div>
+    <h2 id="name-{{ .path }}">{{ $person.name }}</h2>
+    {{ with $person.birthYear }}<p class="person-dates">{{ . }}<span aria-hidden="true">–</span>{{ with $person.deathYear }}{{ . }}{{ end }}</p>{{ end }}
+    {{ if isset $person "age" }}<p class="person-age">{{ if $person.deathYear }}{{ $t.ageAtDeath }}{{ else }}{{ $t.age }}{{ end }} {{ $person.age }}</p>{{ end }}
+  </article>
+  {{ if and (lt .generation 7) (or $person.mother $person.father) }}
+  <ol role="list">
+    {{ $context := . }}
+    {{ range $relation := slice "mother" "father" }}
+      {{ with index $person $relation }}
+        {{ $side := $context.side }}
+        {{ if eq $context.generation 0 }}{{ $side = cond (eq $relation "mother") "maternal" "paternal" }}{{ end }}
+        {{ partial "family-person.html" (dict "people" $context.people "id" . "t" $t "generation" (add $context.generation 1) "relation" $relation "side" $side "path" (printf "%s-%s" $context.path $relation)) }}
+      {{ end }}
+    {{ end }}
+  </ol>
+  {{ end }}
+</li>

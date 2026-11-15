@@ -1,0 +1,185 @@
+{
+  "source": "https://arxiv.org/html/2606.18329v2",
+  "authors": "Joshua W. Foster, Tanner Trickle, and Fabrizio Vassallo",
+  "license": "arXiv perpetual, non-exclusive license; original figures reused for the author’s requested website with full attribution.",
+  "en": {
+    "title": "Pulsar timing searches for dark matter structure",
+    "subtitle": "Numerical simulations, generative signal models, and sensitivity forecasts.",
+    "intro": "Compact dark matter structures can perturb pulsar arrival times through their gravitational influence. In this study, we use direct simulations to test the statistical assumptions underlying previous sensitivity forecasts and develop signal models that describe departures from Gaussianity. We then assess the reach of future pulsar timing arrays in the presence of the stochastic gravitational-wave background.",
+    "contribution": "I built the simulation code, tested the Gaussian approximation, and implemented diffusion and normalizing-flow models, including the correlated Earth-term analysis. I carried out this work with Joshua Foster and Tanner Trickle.",
+    "sections": [
+      {
+        "id": "signals",
+        "title": "Doppler and Shapiro timing signals",
+        "paragraphs": [
+          "A compact object can accelerate a pulsar, shifting its pulse arrival times through the Doppler effect. It can also alter the light-travel time along the radio signal’s path through the Shapiro effect. We sample the relevant spatial distribution of objects separately for each geometry.",
+          "We evolve the simulated objects’ trajectories and calculate their timing perturbations. We then remove components absorbed by the pulsar timing model, which fits the pulsar’s phase, rotation frequency, and frequency derivative. The remaining signal determines the sensitivity of the search."
+        ],
+        "figure": "SketchPulsarTerm.png",
+        "figureNumber": 1,
+        "figureAnchor": "S2.F1",
+        "caption": "The sphere around the pulsar samples nearby accelerations; the cylinder along the Earth–pulsar line samples delays in the light path. The grey arrows represent moving compact objects.",
+        "alt": "Paper Figure 1: a sphere around a pulsar and a cylinder along its line of sight to Earth define the two simulation geometries.",
+        "width": 507,
+        "height": 645
+      },
+      {
+        "id": "statistics",
+        "title": "Non-Gaussian signal distributions",
+        "paragraphs": [
+          "Previous forecasts treated the combined contribution of many dark matter structures as a Gaussian process. Our simulations show that substantial departures from Gaussianity can persist even for large populations. Rare, nearby encounters contribute disproportionately to the signal, so the number of objects alone does not establish the validity of the approximation.",
+          "We construct signal distributions across the static, dynamic, and stochastic regimes. This requires retaining the statistical structure relevant to inference while reducing the cost of repeatedly sampling large populations of dark matter objects."
+        ],
+        "figure": "SignalExamples.svg",
+        "figureNumber": 2,
+        "figureAnchor": "S2.F2",
+        "caption": "Simulated Doppler signals above and Shapiro signals below. The columns move from sparse, slowly varying encounters to dynamic flybys and dense populations. These are model realizations, not observed pulsar data.",
+        "alt": "Paper Figure 2: six panels show example simulated timing signals in static, dynamic, and stochastic regimes.",
+        "width": 1145,
+        "height": 497
+      },
+      {
+        "id": "surrogates",
+        "title": "Generative models for statistical inference",
+        "paragraphs": [
+          "A normalizing flow models the distribution of a compressed cubic amplitude, appropriate for slowly varying signals after timing-model subtraction. We apply the same compression to the data, signal, and background. This gives a consistent likelihood for the compressed data, although it discards information in more complex signal shapes.",
+          "A diffusion model, conditioned on the number of relevant dark matter structures, generates full projected timing signals. It provides a computationally efficient sampler of their distribution without imposing a Gaussian approximation. We use these samples in the likelihood calculation, compare the methods where their assumptions overlap, and check convergence of the Monte Carlo forecasts."
+        ]
+      },
+      {
+        "id": "earth",
+        "title": "Correlated Earth-term signals",
+        "paragraphs": [
+          "A compact object near our Solar System can perturb the arrival times from many pulsars together. This Earth term contains a shared angular pattern: each pulsar sees a different projection of the same underlying acceleration. Treating the pulsars as independent would throw away that structure.",
+          "We therefore model a three-dimensional cubic response vector with a normalizing flow and project it onto the pulsars’ directions. The background model also retains correlations between pulsars. This makes a joint search tractable while preserving the geometry that distinguishes the signal."
+        ],
+        "figure": "SketchEarthTerm.png",
+        "figureNumber": 9,
+        "figureAnchor": "S6.F9",
+        "caption": "For the Earth term, one local population accelerates the Solar System. Its response is projected along every pulsar direction, producing a coherent pattern across the array.",
+        "alt": "Paper Figure 9: two pulsar sightlines originate from Earth, surrounded by a shared population of compact objects.",
+        "width": 470,
+        "height": 539
+      },
+      {
+        "id": "forecast",
+        "title": "Sensitivity with a gravitational-wave background",
+        "paragraphs": [
+          "The gravitational-wave background substantially weakens the forecast reach. With the background parameters used in our fiducial study, the Doppler searches do not reach physically allowed substructure fractions in either benchmark array. The Shapiro channel remains more promising, retaining sensitivity below the full dark matter abundance in the optimistic scenario.",
+          "These are deliberately favorable forecasts for compact objects, not a detection or an analysis of measured PTA data. We omit intrinsic pulsar red noise and assume known background parameters. The diffusion calculation is validated for these noise-only projections; it is not a claim of fully calibrated inference at arbitrary signal strength."
+        ],
+        "figure": "FiducialProjections.svg",
+        "figureNumber": 7,
+        "figureAnchor": "S5.F7",
+        "caption": "Red curves include the gravitational-wave background; black curves use white noise alone. Lower curves indicate greater sensitivity. Solid and dashed curves denote the optimistic and SKA-like arrays; values above a dark matter fraction of one are not physically accessible.",
+        "alt": "Paper Figure 7: projected upper limits on compact-substructure abundance versus object mass for Doppler and Shapiro searches, with and without gravitational-wave background noise.",
+        "width": 1088,
+        "height": 368
+      }
+    ],
+    "back": "Back to the paper",
+    "eyebrow": "Research overview",
+    "readPaper": "Read the full paper",
+    "onThisPage": "Sections",
+    "figureLabel": "Figure",
+    "openFigure": "Open full-size figure",
+    "figureLanguage": "Figure labels are in English.",
+    "credit": "Figures from Foster, Trickle & Vassallo, arXiv:2606.18329v2.",
+    "pipeline": [
+      "Simulate encounters",
+      "Learn signal distributions",
+      "Combine with background",
+      "Forecast sensitivity"
+    ]
+  },
+  "es": {
+    "title": "Búsquedas de estructuras de materia oscura con púlsares",
+    "subtitle": "Simulaciones numéricas, modelos generativos de señales y proyecciones de sensibilidad.",
+    "intro": "Las estructuras compactas de materia oscura pueden perturbar los tiempos de llegada de pulsos mediante su influencia gravitatoria. En este estudio utilizamos simulaciones directas para evaluar los supuestos estadísticos de proyecciones anteriores y desarrollar modelos que describan las desviaciones de la gaussianidad. Luego evaluamos el alcance de futuras redes de cronometraje en presencia del fondo estocástico de ondas gravitacionales.",
+    "contribution": "Desarrollé el código de simulación, evalué la aproximación gaussiana e implementé modelos de difusión y flujos normalizantes, incluido el análisis del término terrestre correlacionado. Realicé este trabajo con Joshua Foster y Tanner Trickle.",
+    "sections": [
+      {
+        "id": "signals",
+        "title": "Señales temporales Doppler y Shapiro",
+        "paragraphs": [
+          "Un objeto compacto puede acelerar un púlsar y modificar los tiempos de llegada de sus pulsos mediante el efecto Doppler. También puede alterar el tiempo de propagación de la señal de radio mediante el efecto Shapiro. Muestreamos por separado la distribución espacial relevante para cada geometría.",
+          "Evolucionamos las trayectorias de los objetos simulados y calculamos las perturbaciones temporales. Luego eliminamos las componentes absorbidas por el modelo de cronometraje, que ajusta la fase, la frecuencia de rotación y su derivada. La señal restante determina la sensibilidad de la búsqueda."
+        ],
+        "figure": "SketchPulsarTerm.png",
+        "figureNumber": 1,
+        "figureAnchor": "S2.F1",
+        "caption": "La esfera alrededor del púlsar muestrea aceleraciones cercanas; el cilindro a lo largo de la línea Tierra–púlsar muestrea retrasos en el recorrido de la luz. Las flechas grises representan objetos compactos en movimiento.",
+        "alt": "Figura 1 del artículo: una esfera alrededor de un púlsar y un cilindro a lo largo de su línea de visión hacia la Tierra definen las dos geometrías de simulación.",
+        "width": 507,
+        "height": 645
+      },
+      {
+        "id": "statistics",
+        "title": "Distribuciones no gaussianas",
+        "paragraphs": [
+          "Las proyecciones anteriores trataban la contribución conjunta de muchas estructuras de materia oscura como un proceso gaussiano. Nuestras simulaciones muestran desviaciones importantes incluso para poblaciones grandes. Los encuentros cercanos y poco frecuentes contribuyen de manera desproporcionada, por lo que el número de objetos no basta para establecer la validez de la aproximación.",
+          "Construimos distribuciones de señales en los regímenes estático, dinámico y estocástico. Esto requiere conservar la estructura estadística relevante para la inferencia y reducir el costo de muestrear repetidamente grandes poblaciones de objetos."
+        ],
+        "figure": "SignalExamples.svg",
+        "figureNumber": 2,
+        "figureAnchor": "S2.F2",
+        "caption": "Señales Doppler simuladas arriba y Shapiro abajo. Las columnas recorren encuentros escasos y lentos, pasos dinámicos y poblaciones densas. Son realizaciones del modelo, no observaciones de púlsares.",
+        "alt": "Figura 2 del artículo: seis paneles muestran señales de cronometraje simuladas en los regímenes estático, dinámico y estocástico.",
+        "width": 1145,
+        "height": 497
+      },
+      {
+        "id": "surrogates",
+        "title": "Modelos generativos para inferencia estadística",
+        "paragraphs": [
+          "Un flujo normalizante modela la distribución de una amplitud cúbica comprimida, apropiada para señales que varían lentamente tras sustraer el modelo de cronometraje. Aplicamos la misma compresión a los datos, la señal y el fondo. Así obtenemos una verosimilitud consistente para los datos comprimidos, aunque se pierde información de señales más complejas.",
+          "Un modelo de difusión, condicionado al número de estructuras relevantes, genera señales temporales completas después de la proyección. Permite muestrear su distribución de manera eficiente sin imponer una aproximación gaussiana. Utilizamos estas muestras en el cálculo de la verosimilitud, comparamos los métodos donde coinciden sus supuestos y comprobamos la convergencia de las proyecciones Monte Carlo."
+        ]
+      },
+      {
+        "id": "earth",
+        "title": "Señales correlacionadas del término terrestre",
+        "paragraphs": [
+          "Un objeto compacto cercano al Sistema Solar puede perturbar conjuntamente los tiempos de llegada desde muchos púlsares. Este término terrestre contiene un patrón angular compartido: cada púlsar observa una proyección distinta de la misma aceleración. Tratar los púlsares como independientes descartaría esa estructura.",
+          "Por eso modelamos un vector tridimensional de respuesta cúbica con un flujo normalizante y lo proyectamos sobre las direcciones de los púlsares. El modelo del fondo también conserva las correlaciones entre ellos. Así hacemos viable una búsqueda conjunta que preserva la geometría característica de la señal."
+        ],
+        "figure": "SketchEarthTerm.png",
+        "figureNumber": 9,
+        "figureAnchor": "S6.F9",
+        "caption": "En el término terrestre, una población local acelera el Sistema Solar. Su respuesta se proyecta sobre cada dirección de observación y produce un patrón coherente en toda la red.",
+        "alt": "Figura 9 del artículo: dos líneas de visión hacia púlsares parten de la Tierra, rodeada por una población común de objetos compactos.",
+        "width": 470,
+        "height": 539
+      },
+      {
+        "id": "forecast",
+        "title": "Sensibilidad con un fondo de ondas gravitacionales",
+        "paragraphs": [
+          "El fondo de ondas gravitacionales reduce considerablemente la sensibilidad prevista. Con los parámetros de nuestro estudio de referencia, las búsquedas Doppler no alcanzan fracciones físicamente posibles de subestructura en ninguna de las dos redes consideradas. El canal Shapiro resulta más prometedor: conserva sensibilidad a fracciones inferiores a toda la materia oscura en el escenario optimista.",
+          "Son proyecciones deliberadamente favorables para objetos compactos, no una detección ni un análisis de datos observados. Omitimos el ruido rojo intrínseco de los púlsares y suponemos conocidos los parámetros del fondo. El cálculo con difusión se valida para estas proyecciones sin señal inyectada; no establece una inferencia completamente calibrada para cualquier intensidad de señal."
+        ],
+        "figure": "FiducialProjections.svg",
+        "figureNumber": 7,
+        "figureAnchor": "S5.F7",
+        "caption": "Las curvas rojas incluyen el fondo de ondas gravitacionales; las negras, solo ruido blanco. Límites más bajos indican mayor sensibilidad. Las líneas continuas y discontinuas corresponden a las redes optimista y tipo SKA; una fracción de materia oscura superior a uno no es físicamente posible.",
+        "alt": "Figura 7 del artículo: límites proyectados sobre la abundancia de subestructura compacta frente a su masa para búsquedas Doppler y Shapiro, con y sin ruido del fondo gravitacional.",
+        "width": 1088,
+        "height": 368
+      }
+    ],
+    "back": "Volver al artículo",
+    "eyebrow": "Descripción de la investigación",
+    "readPaper": "Leer el artículo completo",
+    "onThisPage": "Secciones",
+    "figureLabel": "Figura",
+    "openFigure": "Abrir figura en tamaño completo",
+    "figureLanguage": "Las etiquetas de las figuras están en inglés.",
+    "credit": "Figuras de Foster, Trickle y Vassallo, arXiv:2606.18329v2.",
+    "pipeline": [
+      "Simular encuentros",
+      "Aprender distribuciones",
+      "Combinar con el fondo",
+      "Proyectar la sensibilidad"
+    ]
+  }
+}

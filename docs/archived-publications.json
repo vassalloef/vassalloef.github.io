@@ -1,0 +1,45 @@
+[
+  {
+    "id": "paper-lanthanum",
+    "year": 2025,
+    "title": "Lifetimes of bound excited states of the lanthanum negative ion and implications for laser cooling: Experiment and theory",
+    "authors": [
+      "C. W. Walter",
+      "F. E. Vassallo",
+      "J. Karls",
+      "D. Leimbach",
+      "D. Hanstorp",
+      "J. E. Navarro Navarrete",
+      "O. H. Lundgren",
+      "M. K. Kristiansson",
+      "M. Björkhage",
+      "R. D. Thomas",
+      "H. Zettergren",
+      "H. T. Schmidt",
+      "C. Cheung",
+      "M. S. Safronova",
+      "N. D. Gibson"
+    ],
+    "compactAuthors": true,
+    "journal": "Physical Review A 112, 052801",
+    "doi": "https://doi.org/10.1103/6641-mdhr",
+    "sources": [
+      "https://journals.aps.org/pra/abstract/10.1103/6641-mdhr"
+    ]
+  },
+  {
+    "id": "paper-lead",
+    "year": 2022,
+    "title": "Measurement of the electron affinity of lead and its isotope shifts",
+    "authors": [
+      "C. W. Walter",
+      "F. E. Vassallo",
+      "N. D. Gibson"
+    ],
+    "journal": "Physical Review A 106, L010801",
+    "doi": "https://doi.org/10.1103/PhysRevA.106.L010801",
+    "sources": [
+      "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.L010801"
+    ]
+  }
+]

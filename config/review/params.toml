@@ -1,0 +1,3 @@
+# An explicit local-only build for exercising news interactions.
+newsDemo = true
+
