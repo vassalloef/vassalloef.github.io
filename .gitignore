@@ -1,0 +1,10 @@
+public/
+resources/
+.hugo_build.lock
+.hugo-cache/
+.tools/
+.review-public/
+.DS_Store
+node_modules/
+test-results/
+

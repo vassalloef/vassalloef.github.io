@@ -1,0 +1,66 @@
+{{ $lang := .Language.Lang }}
+{{ $t := index .Site.Data.copy $lang }}
+{{ $g := index .Site.Data.pta_guide $lang }}
+<!doctype html>
+<html lang="{{ $lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ $g.subtitle }}">
+  <meta name="theme-color" content="#edf6fb">
+  <title>Fabrizio Vassallo</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fabrizio Vassallo">
+  <meta property="og:description" content="{{ $g.subtitle }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ "images/fabrizio-vassallo.webp" | absURL }}">
+  <meta property="og:image:alt" content="{{ $t.portraitAlt }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/nunito-sans-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := resources.Get "site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $js := resources.Get "site.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ $t.skip }}</a>
+  {{ partial "header.html" . }}
+  <main id="main" class="guide-page section-shell">
+    <div class="guide-intro">
+      <a class="text-link" href="{{ .Site.Home.RelPermalink }}#paper-pulsar-timing">← {{ $g.back }}</a>
+      <p class="eyebrow">{{ $g.eyebrow }}</p>
+      <h1>{{ $g.title }}</h1>
+      <p class="guide-subtitle">{{ $g.subtitle }}</p>
+      <p>{{ $g.intro }}</p>
+      <p class="guide-contribution"><strong>{{ $t.myContribution }}</strong> {{ $g.contribution }}</p>
+      <a class="text-link" href="https://arxiv.org/abs/2606.18329">{{ $g.readPaper }} ↗</a>
+    </div>
+    <nav class="guide-nav" aria-label="{{ $g.onThisPage }}">
+      {{ range $i, $section := $g.sections }}<a href="#{{ .id }}"><span>{{ add $i 1 }}</span>{{ .title }}</a>{{ end }}
+    </nav>
+    {{ range $i, $section := $g.sections }}
+    <section class="guide-section{{ if or (eq .id "signals") (eq .id "earth") }} guide-paired{{ end }}" id="{{ .id }}" aria-labelledby="{{ .id }}-title">
+      <div class="guide-prose">
+        <span class="step-number" aria-hidden="true">{{ add $i 1 }}</span>
+        <h2 id="{{ .id }}-title">{{ .title }}</h2>
+        {{ range .paragraphs }}<p>{{ . }}</p>{{ end }}
+      </div>
+      {{ with .figure }}
+      <figure class="guide-figure">
+        <a href="{{ printf "images/pta/%s" . | relURL }}" target="_blank" rel="noopener" aria-label="{{ $g.openFigure }}: {{ $g.figureLabel }} {{ $section.figureNumber }}"><img src="{{ printf "images/pta/%s" . | relURL }}" alt="{{ $section.alt }}" width="{{ $section.width }}" height="{{ $section.height }}" loading="lazy" decoding="async"></a>
+        <figcaption><a class="figure-source" href="https://arxiv.org/html/2606.18329v2#{{ $section.figureAnchor }}">{{ $g.figureLabel }} {{ $section.figureNumber }}</a> · {{ $section.caption }}{{ if eq $lang "es" }} {{ $g.figureLanguage }}{{ end }}</figcaption>
+        <a class="text-link figure-open" href="{{ printf "images/pta/%s" . | relURL }}" target="_blank" rel="noopener">{{ $g.openFigure }} ↗</a>
+      </figure>
+      {{ else }}
+      <ol class="inference-pipeline">{{ range $g.pipeline }}<li>{{ . }}</li>{{ end }}</ol>
+      {{ end }}
+    </section>
+    {{ end }}
+    <div class="guide-credit"><p>{{ $g.credit }}</p><a class="text-link" href="{{ .Site.Home.RelPermalink }}#paper-pulsar-timing">← {{ $g.back }}</a></div>
+  </main>
+  <footer class="site-footer section-shell"><div class="footer-bottom"><span>© {{ now.Year }} Fabrizio Vassallo</span><a href="{{ .Site.Home.RelPermalink }}">{{ $t.about }} ↗</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{{ $lang := .Language.Lang }}
+{{ $t := index .Site.Data.family_copy $lang }}
+{{ $family := .Site.Data.family }}
+<!doctype html>
+<html lang="{{ $lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#edf6fb">
+  <title>{{ $t.title }} · Fabrizio Vassallo</title>
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/nunito-sans-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := resources.Get "family.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $js := resources.Get "family.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body>
+  <a class="family-skip" href="#tree">{{ $t.skip }}</a>
+  <div class="family-shell">
+    <header class="family-header">
+      <span class="album-label"><svg class="album-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 36V22m0 7C10 29 10 16 10 16s14-1 14 13Zm0-6C24 9 37 9 37 9s1 14-13 14Z"/><path d="M15 38h18"/></svg>{{ $t.album }}</span>
+      <nav class="family-language" aria-label="{{ $t.language }}">{{ range .AllTranslations }}<a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}"{{ if eq .Language.Lang $lang }} aria-current="page"{{ end }}>{{ upper .Language.Lang }}</a>{{ end }}</nav>
+    </header>
+    <main>
+      <div class="family-intro"><div><h1>{{ $t.title }}<span aria-hidden="true">.</span></h1><p>{{ $t.intro }}</p></div><p class="tree-count" data-ancestor-label="{{ $t.ancestors }}" data-generation-label="{{ $t.generations }}" aria-live="polite" aria-atomic="true"></p></div>
+      <section class="tree-panel" aria-label="{{ $t.title }}">
+        <div class="tree-toolbar" hidden>
+          <div class="branch-filters" role="group" aria-label="{{ $t.branchLabel }}">
+            <button type="button" data-branch="all" aria-pressed="true">{{ $t.all }}</button>
+            <button type="button" data-branch="maternal" aria-pressed="false">{{ $t.maternal }}</button>
+            <button type="button" data-branch="paternal" aria-pressed="false">{{ $t.paternal }}</button>
+          </div>
+          <div class="zoom-controls" role="group" aria-label="{{ $t.zoom }}"><button type="button" data-zoom="out" aria-label="{{ $t.zoomOut }}">−</button><output class="zoom-level" aria-label="{{ $t.zoom }}">100%</output><button type="button" data-zoom="in" aria-label="{{ $t.zoomIn }}">+</button><button type="button" class="fit-tree">{{ $t.fit }}</button></div>
+        </div>
+        <div id="tree" class="tree-viewport" tabindex="0" role="region" aria-label="{{ $t.explore }}">
+          <div class="tree-stage"><div class="tree-world">
+            <svg class="tree-connectors" aria-hidden="true"></svg>
+            <ol class="ancestor-list" role="list">{{ partial "family-person.html" (dict "people" $family.people "id" $family.root "t" $t "generation" 0 "side" "root" "path" "root") }}</ol>
+          </div></div>
+        </div>
+        <div class="tree-caption"><span class="tree-hint" hidden><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2v16M2 10h16M7 5l3-3 3 3M7 15l3 3 3-3M5 7l-3 3 3 3M15 7l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ $t.hint }}</span><span>{{ $t.note }}</span></div>
+      </section>
+    </main>
+    <footer class="family-footer"><span class="footer-sprout" aria-hidden="true">✦</span> Vassallo · Lentati</footer>
+  </div>
+  <div class="birthplace-tooltip" id="birthplace-tooltip" role="tooltip" hidden><span>{{ $t.birthplace }}</span><strong></strong></div>
+</body>
+</html>

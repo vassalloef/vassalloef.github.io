@@ -1,0 +1,19 @@
+{{ $t := index .Site.Data.copy .Language.Lang }}
+{{ $lang := .Language.Lang }}
+{{ $news := .Site.Data.news }}
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="{{ if not .IsHome }}{{ .Site.Home.RelPermalink }}{{ end }}#about" aria-label="Fabrizio Vassallo">Fabrizio Vassallo<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <nav class="main-nav" aria-label="{{ $t.navLabel }}">
+        <a href="{{ if not .IsHome }}{{ .Site.Home.RelPermalink }}{{ end }}#about">{{ $t.about }}</a>
+        <a href="{{ if not .IsHome }}{{ .Site.Home.RelPermalink }}{{ end }}#research">{{ $t.research }}</a>
+        <a href="{{ if not .IsHome }}{{ .Site.Home.RelPermalink }}{{ end }}#publications">{{ $t.publications }}</a>
+        {{ if $news }}<a href="{{ if not .IsHome }}{{ .Site.Home.RelPermalink }}{{ end }}#news">{{ $t.news }}</a>{{ end }}
+      </nav>
+      <nav class="language-switch" aria-label="{{ $t.languageLabel }}">
+        {{ range .AllTranslations }}
+          <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}" class="language-link{{ if eq .Language.Lang $lang }} is-current{{ end }}" {{ if eq .Language.Lang $lang }}aria-current="page"{{ end }} aria-label="{{ .Language.LanguageName }}">{{ upper .Language.Lang }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </header>

@@ -1,0 +1,24 @@
+baseURL = 'https://vassalloef.com/'
+title = 'Fabrizio Vassallo'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+disableKinds = ['taxonomy', 'term', 'RSS', 'section']
+enableRobotsTXT = true
+timeZone = 'America/Chicago'
+
+[languages.en]
+languageCode = 'en'
+languageName = 'English'
+weight = 1
+
+[languages.es]
+languageCode = 'es'
+languageName = 'Español'
+weight = 2
+
+[outputs]
+home = ['HTML']
+
+[params]
+newsDemo = false
+

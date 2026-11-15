@@ -1,0 +1,39 @@
+{{ $lang := .Language.Lang }}
+{{ $t := index .Site.Data.copy $lang }}
+    <section id="perspectives" class="perspectives-section" aria-labelledby="perspectives-title">
+      <div class="section-shell">
+        <div class="perspectives-heading">
+          <h2 id="perspectives-title">{{ $t.perspectives }}</h2>
+          <p>{{ $t.perspectivesIntro }}</p>
+        </div>
+        <div class="perspectives-grid">
+          {{ range .Site.Data.perspectives }}
+          {{ $perspective := index . $lang }}
+          <article class="perspective-card" id="{{ .id }}" aria-labelledby="{{ .id }}-title">
+            {{ partial "perspective-art.html" .art }}
+            <h3 id="{{ .id }}-title">{{ $perspective.title }}</h3>
+            <p class="perspective-summary">{{ $perspective.summary }}</p>
+            <a class="perspective-open perspective-read text-link" href="#{{ .id }}" aria-label="{{ $t.readPerspective }}: {{ $perspective.title }}">{{ $t.readPerspective }} <span aria-hidden="true">+</span></a>
+            <div class="perspective-full">
+              {{ range $perspective.paragraphs }}<p>{{ . }}</p>{{ end }}
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    <dialog id="perspective-reader" class="perspective-reader" aria-labelledby="perspective-reader-title">
+      <div class="reader-topbar">
+        <span>{{ $t.perspectives }}</span>
+        <button class="reader-close" type="button" autofocus>{{ $t.closePerspective }} <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="reader-art" aria-hidden="true"></div>
+      <h2 id="perspective-reader-title"></h2>
+      <div class="reader-body"></div>
+      <div class="reader-footer">
+        <button class="reader-copy" type="button" data-copied="{{ $t.copiedPerspective }}" data-failed="{{ $t.copyFailedPerspective }}">{{ $t.copyPerspective }} <span aria-hidden="true">↗</span></button>
+        {{ range .AllTranslations }}{{ if ne .Language.Lang $lang }}<a class="reader-language" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a>{{ end }}{{ end }}
+        <span class="reader-status" role="status"></span>
+      </div>
+    </dialog>
+

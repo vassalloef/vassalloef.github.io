@@ -1,0 +1,150 @@
+{{- $lang := .Language.Lang -}}
+{{- $t := index .Site.Data.copy $lang -}}
+{{- $news := .Site.Data.news -}}
+{{- if and .Site.Params.newsDemo (ne hugo.Environment "production") -}}{{ $news = .Site.Data.news_demo }}{{- end -}}
+<!doctype html>
+<html lang="{{ $lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ $t.meta }}">
+  <meta name="theme-color" content="#edf6fb">
+  <title>Fabrizio Vassallo</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fabrizio Vassallo">
+  <meta property="og:description" content="{{ $t.meta }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ "images/fabrizio-vassallo.webp" | absURL }}">
+  <meta property="og:image:alt" content="{{ $t.portraitAlt }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/nunito-sans-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := resources.Get "site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $js := resources.Get "site.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ $t.skip }}</a>
+  {{ partial "header.html" . }}
+  <main id="main">
+    <section id="about" class="hero section-shell" aria-labelledby="name">
+      <div class="hero-copy">
+        <h1 id="name">Fabrizio<br>Vassallo<span class="name-period">.</span></h1>
+        <p class="hero-intro">{{ $t.intro }}</p>
+        <p class="bio">{{ $t.bio | markdownify }}</p>
+        <div class="hero-links flag-links">
+          <a class="button" href="mailto:fevassallo@wisc.edu">{{ $t.email }}</a>
+          <a class="button flag-gold" href="https://inspirehep.net/authors/2918992">INSPIRE</a>
+          <a class="button" href="{{ "files/Fabrizio_Vassallo_CV.pdf" | relURL }}" target="_blank" rel="noopener">{{ $t.cv }}</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <figure class="portrait">
+          <img src="{{ "images/fabrizio-vassallo.webp" | relURL }}" alt="{{ $t.portraitAlt }}" width="960" height="960" fetchpriority="high">
+        </figure>
+        <div class="affiliation">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div><p>{{ $t.position }}</p><a href="https://www.physics.wisc.edu/">University of Wisconsin–Madison</a><span class="affiliation-separator"> / </span><a href="https://wipac.wisc.edu/">WIPAC</a></div>
+        </div>
+      </div>
+      <div class="education-strip">
+        <p class="eyebrow education-label">{{ $t.educationLabel }}</p>
+        <div><span class="education-date">2024–{{ $t.present }}</span><p>{{ $t.phd }}</p><span class="advisor-links">{{ $t.advisors | markdownify }}</span></div>
+        <div><span class="education-date">2020–2024</span><p>{{ $t.undergraduate }}</p><span>{{ $t.undergraduateDetail }}</span></div>
+      </div>
+    </section>
+
+    {{/* Perspectives is paused. Restore with: {{ partial "perspectives.html" . }} */}}
+    <section id="research" class="research-section" aria-labelledby="research-title">
+      <div class="section-shell">
+        <div class="research-heading">
+          <div><h2 id="research-title">{{ $t.researchTitle }}</h2></div>
+          <p class="section-intro">{{ $t.researchIntro }}</p>
+        </div>
+        <div class="research-grid">
+          {{ range $t.researchTopics }}
+          <article class="research-topic" aria-labelledby="research-{{ .id }}-title">
+            <p class="topic-label">{{ .label }}</p>
+            {{ partial "schematic.html" . }}
+            <h3 id="research-{{ .id }}-title">{{ .title }}</h3>
+            <p>{{ .text }}</p>
+            <a class="text-link" href="{{ if .email }}mailto:fevassallo@wisc.edu{{ else }}#{{ .paper }}{{ end }}">{{ .link }} <span aria-hidden="true">↗</span></a>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="publications-section section-shell" aria-labelledby="publications-title">
+      <div class="section-heading publications-heading">
+        <div><h2 id="publications-title">{{ $t.papersTitle }}</h2></div>
+        <a class="text-link inspire-link" href="https://inspirehep.net/authors/2918992">{{ $t.allPapers }} <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="papers-note">{{ $t.papersNote }}</p>
+      <div class="publication-list">
+      {{ range .Site.Data.publications }}
+        {{ $paper := . }}
+        {{ $coverage := where $news "paper" .id }}
+        <article class="publication" id="{{ .id }}" aria-labelledby="{{ .id }}-title" tabindex="-1">
+          <div class="publication-year">{{ .year }}</div>
+          <div class="publication-main">
+            <h3 id="{{ .id }}-title" lang="en"><a href="{{ if .doi }}{{ .doi }}{{ else }}https://arxiv.org/abs/{{ .arxiv }}{{ end }}">{{ .title }}</a></h3>
+            <p class="authors">{{ $authors := .authors }}{{ if .compactAuthors }}{{ $authors = first 3 .authors }}{{ end }}{{ range $i, $author := $authors }}{{ if $i }}, {{ end }}{{ if in $author "Vassallo" }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}{{ if .compactAuthors }}, et al.{{ end }}</p>
+            <p class="journal">{{ if .journal }}<span lang="en">{{ .journal }}</span> ({{ .year }}){{ else }}{{ $t.preprint }}{{ if eq .status "submitted" }} · {{ $t.submitted }}{{ end }}{{ end }}</p>
+            <div class="publication-actions">
+              <div class="paper-links">
+                {{ with .arxiv }}<a href="https://arxiv.org/abs/{{ . }}">arXiv <span aria-hidden="true">↗</span></a>{{ end }}
+                {{ with .doi }}<a href="{{ . }}">{{ $t.journalLink }} <span aria-hidden="true">↗</span></a>{{ end }}
+                {{ if .guide }}<a class="guide-link" href="{{ $.Site.Home.RelPermalink }}research/{{ .guide }}/">{{ $t.exploreGuide }} <span aria-hidden="true">↗</span></a>{{ end }}
+                {{ range $coverage }}<a class="news-badge" href="#{{ .id }}">{{ if eq .kind "talk" }}{{ $t.talkLabel }}{{ else }}{{ $t.coverageLabel }}{{ end }} <span aria-hidden="true">↓</span></a>{{ end }}
+              </div>
+            </div>
+            {{ with .explanation }}
+              {{ $explanation := index . $lang }}
+              <details class="paper-details" id="{{ $paper.id }}-details">
+                <summary aria-controls="{{ $paper.id }}-explanation"><span class="summary-open">{{ $t.aboutPaper }}</span><span class="summary-close">{{ $t.closePaper }}</span><span class="expand-icon" aria-hidden="true">+</span></summary>
+                <div class="paper-explanation" id="{{ $paper.id }}-explanation">
+                  <h4>{{ $explanation.heading }}</h4>
+                  {{ range $explanation.paragraphs }}<p>{{ . }}</p>{{ end }}
+
+                </div>
+              </details>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+      </div>
+    </section>
+
+    {{ if $news }}
+    <section id="news" class="news-section section-shell" aria-labelledby="news-title">
+      <h2 id="news-title">{{ $t.newsIntro }}</h2>
+      <div class="news-grid">
+      {{ range $news }}
+        {{ $copy := index . $lang }}
+        <article class="news-entry{{ if .image }} has-portrait{{ end }}" id="{{ .id }}" tabindex="-1">
+          {{ if .demo }}<p class="demo-notice">{{ $t.demoNotice }}</p>{{ end }}
+          <div class="news-meta"><span class="entry-kind">{{ if eq .kind "talk" }}{{ $t.talkLabel }}{{ else if eq .kind "writing" }}{{ $t.writingLabel }}{{ else }}{{ $t.coverageLabel }}{{ end }}</span>{{ with .date }}<time datetime="{{ . }}">{{ time.Format (cond (eq $lang "es") ":date_long" "January 2, 2006") . }}</time>{{ else }}{{ with .year }}<time datetime="{{ . }}">{{ . }}</time>{{ end }}{{ end }}</div>
+          {{ if .image }}<figure class="entry-portrait{{ if eq .imageStyle "plate" }} entry-plate{{ end }}"><img src="{{ .image | relURL }}" alt="{{ $copy.imageAlt }}" width="{{ .imageWidth | default 514 }}" height="{{ .imageHeight | default 754 }}" loading="lazy" decoding="async">{{ if .imageCredit }}<figcaption class="image-credit"><a href="{{ .imageSource }}">{{ $copy.imageCreditLabel }}</a></figcaption>{{ end }}</figure>{{ end }}
+          <p class="entry-outlet">{{ .outlet }}</p>
+          <h3>{{ $copy.headline }}</h3><p>{{ $copy.summary }}</p>
+          <div class="entry-links">
+          {{ if .url }}<a class="text-link external-coverage" href="{{ .url }}">{{ if eq .kind "talk" }}{{ $t.viewTalk }}{{ else if eq .kind "writing" }}{{ $t.readEssay }}{{ else }}{{ $t.readOn }} {{ .outlet }}{{ end }}{{ if and (eq $lang "es") (eq .language "en") }} (en inglés){{ end }} ↗</a>{{ end }}
+          {{ with .slides }}<a class="text-link" href="{{ . }}" target="_blank" rel="noopener">{{ $t.viewSlides }} ↗</a>{{ end }}
+          {{ with .paper }}<a class="text-link back-to-paper" href="#{{ . }}">{{ $t.relatedPaper }} ↑</a>{{ end }}
+          </div>
+        </article>
+      {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  </main>
+  <footer class="site-footer section-shell">
+    <div><p class="footer-invitation">{{ $t.footerLine }}</p><a class="footer-email" href="mailto:fevassallo@wisc.edu">fevassallo@wisc.edu <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-bottom"><span>© {{ now.Year }} Fabrizio Vassallo</span><span>Madison, Wisconsin</span><a href="#about">{{ $t.backTop }}</a></div>
+  </footer>
+</body>
+</html>

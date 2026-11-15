@@ -1,0 +1,84 @@
+[
+  {
+    "id": "talk-pheno-2026",
+    "kind": "talk",
+    "paper": "paper-antinuclei",
+    "outlet": "Pheno 2026 · University of Pittsburgh",
+    "date": "2026-05-12",
+    "url": "https://indico.global/event/16413/contributions/153810/",
+    "slides": "https://indico.global/event/16413/contributions/153810/attachments/69894/135570/Presentation%20at%20Pheno.pdf",
+    "language": "en",
+    "en": {
+      "headline": "Enhancing cosmic-ray antinuclei fluxes from dark matter using baryon number",
+      "summary": "Presentation at Pheno 2026 on enhanced antinucleus production from dark matter annihilation into particles carrying baryon number, based on our Physical Review Letters study."
+    },
+    "es": {
+      "headline": "Aumentar los flujos de antinúcleos cósmicos de materia oscura mediante el número bariónico",
+      "summary": "Presentación en Pheno 2026 sobre el aumento de la producción de antinúcleos por aniquilación de materia oscura en partículas con número bariónico, basada en nuestro estudio publicado en Physical Review Letters."
+    }
+  },
+  {
+    "id": "writing-radiations",
+    "kind": "writing",
+    "outlet": "Radiations · AIP",
+    "date": "2023-06-20",
+    "url": "https://students.aip.org/radiations/science-comes-to-life-at-physcon-scholarly-adventures-in-washington-dc",
+    "language": "en",
+    "en": {
+      "headline": "Science comes to life at PhysCon",
+      "summary": "An essay in Radiations about my participation in the 2022 Physics Congress, including presenting undergraduate research and meeting other physics students and researchers."
+    },
+    "es": {
+      "headline": "La ciencia cobra vida en PhysCon",
+      "summary": "Un ensayo en Radiations sobre mi participación en el Congreso de Física de 2022, donde presenté mi investigación de grado e intercambié experiencias con otros estudiantes e investigadores."
+    }
+  },
+  {
+    "id": "writing-grandmother",
+    "kind": "writing",
+    "outlet": "Exile · Denison University",
+    "year": 2022,
+    "url": "https://digitalcommons.denison.edu/exile/vol68/iss1/29/",
+    "language": "en",
+    "en": {
+      "headline": "The Calm Amidst the Storm",
+      "summary": "A literary nonfiction piece about my grandmother, published in Exile, Denison University’s literary magazine.",
+      "imageAlt": "My grandmother as a toddler, standing on a chair."
+    },
+    "es": {
+      "headline": "La calma en medio de la tormenta",
+      "summary": "Un relato de no ficción sobre mi abuela, publicado en Exile, la revista literaria de Denison University.",
+      "imageAlt": "Mi abuela de pequeña, de pie sobre una silla."
+    },
+    "image": "images/grandmother-childhood.png"
+  },
+  {
+    "id": "writing-modern-synthesis",
+    "kind": "writing",
+    "outlet": "Synthesis · Harvard University",
+    "year": 2023,
+    "url": "https://indd.adobe.com/view/54a9817d-9641-4a0c-8944-7f4e6f5b4fca",
+    "language": "en",
+    "en": {
+      "headline": "Powerful math: What biology’s modern synthesis reveals about the twofold influence of numbers",
+      "summary": "An essay on the role of mathematics in biology’s modern synthesis, published in Synthesis at Harvard University.",
+      "imageAlt": "Vertical black-and-white drawing of a female Drosophila melanogaster from Thomas Hunt Morgan’s 1919 book.",
+      "imageCreditLabel": "Illustration: Morgan, 1919",
+      "imageSourceLabel": "Image source and reuse information"
+    },
+    "es": {
+      "headline": "El poder de las matemáticas: lo que la síntesis moderna de la biología revela sobre la doble influencia de los números",
+      "summary": "Un ensayo sobre el papel de las matemáticas en la síntesis moderna de la biología, publicado en Synthesis, de Harvard University.",
+      "imageAlt": "Dibujo vertical en blanco y negro de una hembra de Drosophila melanogaster, del libro de Thomas Hunt Morgan de 1919.",
+      "imageCreditLabel": "Ilustración: Morgan, 1919",
+      "imageSourceLabel": "Fuente y condiciones de uso de la imagen"
+    },
+    "image": "images/drosophila-morgan-1919.png",
+    "imageStyle": "plate",
+    "imageWidth": 1024,
+    "imageHeight": 1384,
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Morgan1919_female.png",
+    "imageCredit": "Female Drosophila melanogaster from Thomas Hunt Morgan, The Physical Basis of Heredity (1919), p. 28. Public domain in the United States. Via Wikimedia Commons and the Internet Archive.",
+    "imageProvenance": "Thomas Hunt Morgan, The Physical Basis of Heredity, Philadelphia: J. B. Lippincott Company (1919), p. 28. Source scan: https://archive.org/details/physicalbasisofh1919morg/page/28/. Wikimedia Commons marks this US work as public domain due to publication before 1931. Image used without modification."
+  }
+]
