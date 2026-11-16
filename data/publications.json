@@ -48,8 +48,7 @@
           "Por primera vez, desarrollamos un único marco estadístico unificado capaz de tratar todos estos regímenes de señales. Además, incluimos el fondo estocástico de ondas gravitacionales descubierto recientemente por las redes de cronometraje de púlsares. En conjunto, el tratamiento revisado de la señal y este fondo reducen la sensibilidad proyectada de las búsquedas con púlsares y motivan análisis futuros más robustos."
         ]
       }
-    },
-    "guide": "pulsar-timing"
+    }
   },
   {
     "id": "paper-antinuclei",

@@ -99,27 +99,10 @@ for lang, path in [('en', OUTPUT / 'index.html'), ('es', OUTPUT / 'es/index.html
                 local /= 'index.html'
             assert local.exists(), f'Missing local asset/page: {link}'
     print(f'{lang}: language metadata, anchors, local links, and production content verified')
-guide = json.loads((ROOT / 'data/pta_guide.json').read_text())
-assert [s['id'] for s in guide['en']['sections']] == [s['id'] for s in guide['es']['sections']]
-for lang, prefix in [('en', ''), ('es', 'es/')]:
-    html = (OUTPUT / prefix / 'research/pulsar-timing/index.html').read_text()
-    page = Page(html)
-    assert page.lang == lang and set(page.alternates) >= {'en', 'es'}
-    assert len(page.ids) == len(set(page.ids))
-    assert all(s['id'] in page.ids for s in guide[lang]['sections'])
-    assert 'localhost' not in html and 'livereload' not in html
-    for link in page.links:
-        parsed = urlparse(link)
-        if parsed.scheme or parsed.netloc:
-            continue
-        if parsed.path:
-            local = OUTPUT / unquote(parsed.path).lstrip('/')
-            if parsed.path.endswith('/'):
-                local /= 'index.html'
-            assert local.exists(), f'Missing guide asset/page: {link}'
-            if parsed.fragment and local.suffix == '.html':
-                assert parsed.fragment in Page(local.read_text()).ids, f'Broken guide destination: {link}'
-        elif parsed.fragment:
-            assert parsed.fragment in page.ids, f'Broken guide anchor: {link}'
-    print(f'{lang}: PTA guide, figures, translations, and return links verified')
-print(f'OK: {len(papers)} papers, six explanations, {len(perspectives)} archived perspectives, restored research cards, bilingual homepage and PTA guide.')
+# The extended PTA article is paused; its source is retained as a draft.
+for prefix in ('', 'es/'):
+    assert not (OUTPUT / prefix / 'research/pulsar-timing/index.html').exists(), 'Paused PTA article published'
+    homepage = (OUTPUT / prefix / 'index.html').read_text()
+    assert 'research/pulsar-timing/' not in homepage, 'Link to paused PTA article published'
+assert 'research/pulsar-timing/' not in (OUTPUT / 'sitemap.xml').read_text()
+print(f'OK: {len(papers)} papers, six explanations, {len(perspectives)} archived perspectives, bilingual homepage, and no published PTA article.')
