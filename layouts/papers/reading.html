@@ -1,0 +1,71 @@
+{{ $lang := .Language.Lang }}
+{{ $t := index .Site.Data.copy $lang }}
+{{ $r := .Site.Data.reading }}
+{{ $p := index $r $lang }}
+<!doctype html>
+<html lang="{{ $lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="{{ $p.intro }}">
+  <meta name="theme-color" content="#edf6fb">
+  <title>{{ $p.title }} · Fabrizio Vassallo</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:title" content="{{ $p.title }} · Fabrizio Vassallo">
+  <meta property="og:description" content="{{ $p.intro }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/nunito-sans-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := slice (resources.Get "site.css") (resources.Get "papers.css") | resources.Concat "reading.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ "vendor/katex/katex.min.css" | relURL }}">
+  <script src="{{ "vendor/katex/katex.min.js" | relURL }}" defer></script>
+  <script src="{{ "vendor/katex/auto-render.min.js" | relURL }}" defer></script>
+  {{ $js := resources.Get "papers.js" | js.Build (dict "target" "es2020") | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ $t.skip }}</a>
+  {{ partial "header.html" . }}
+  <main id="main" class="reading-page section-shell">
+    <div class="reading-intro">
+      <div><h1>{{ $p.title }}<span class="reading-period" aria-hidden="true">.</span></h1><p>{{ $p.intro }}</p></div>
+      <a class="reading-library" href="{{ $r.libraryUrl }}" target="_blank" rel="noopener">{{ $p.library }}</a>
+    </div>
+    <noscript><p class="reading-notice">{{ $p.noscript }} <a href="{{ $r.libraryUrl }}">Zotero</a></p></noscript>
+    <div class="reading-workspace" data-reading-app>
+      <aside class="reading-sidebar">
+        <label class="reading-label" for="paper-search">{{ $p.search }}</label>
+        <input type="search" id="paper-search" placeholder="{{ $p.placeholder }}" autocomplete="off" spellcheck="false">
+        <details class="reading-filters" open>
+          <summary>{{ $p.filters }}<span aria-hidden="true">⌄</span></summary>
+          <div class="reading-filter-body">
+            <fieldset aria-label="{{ $p.categories }}"><details class="category-filter"><summary>{{ $p.categories }}<span aria-hidden="true">⌄</span></summary><p class="filter-hint">{{ $p.categoryHint }}</p><div id="category-options" class="filter-options"></div></details></fieldset>
+            <fieldset><legend>{{ $p.labels }}</legend><p class="filter-hint" id="label-hint">{{ $p.labelHint }}</p><div id="label-options" class="filter-options"></div></fieldset>
+            <label class="reading-label" for="paper-added">{{ $p.added }}</label>
+            <select id="paper-added"><option value="">{{ $p.anyTime }}</option><option value="7">{{ $p.week }}</option><option value="30">{{ $p.month }}</option><option value="90">{{ $p.quarter }}</option></select>
+            <label class="reading-label" for="paper-year">{{ $p.year }}</label>
+            <select id="paper-year"><option value="">{{ $p.allYears }}</option></select>
+            <button class="reading-clear" type="button" id="clear-filters">{{ $p.clear }}</button>
+          </div>
+        </details>
+      </aside>
+      <div class="reading-results">
+        <div class="reading-toolbar">
+          <p class="reading-count" id="paper-count" role="status" aria-live="polite" aria-atomic="true">{{ $p.loading }}</p>
+          <label class="sort-control" for="paper-sort"><span>{{ $p.sort }}</span><select id="paper-sort"><option value="added">{{ $p.newestAdded }}</option><option value="newest">{{ $p.newestPaper }}</option><option value="oldest">{{ $p.oldestPaper }}</option><option value="title">{{ $p.alphabetical }}</option></select></label>
+        </div>
+        <div class="reading-sync"><p id="sync-status" role="status" aria-live="polite" aria-atomic="true">{{ $p.loading }}</p><button type="button" class="reading-refresh" id="refresh-papers">{{ $p.refresh }}</button></div>
+        <div id="paper-list" class="reading-list" aria-busy="true"></div>
+        <div class="reading-empty" id="reading-empty" hidden><h2></h2><p></p><button type="button" class="reading-clear" id="empty-clear">{{ $p.clear }}</button></div>
+      </div>
+    </div>
+    <p class="reading-source">{{ $p.source }}</p>
+  </main>
+  <footer class="site-footer section-shell"><div class="footer-bottom"><span>© {{ now.Year }} Fabrizio Vassallo</span><a href="{{ .Site.Home.RelPermalink }}">{{ $p.back }}</a></div></footer>
+  <script type="application/json" id="reading-config">{{ dict "groupId" $r.groupId "libraryUrl" $r.libraryUrl "lang" $lang "copy" $p | jsonify | safeJS }}</script>
+</body>
+</html>

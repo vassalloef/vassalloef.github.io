@@ -13,7 +13,7 @@ OUTPUT = ROOT / (sys.argv[1] if len(sys.argv) > 1 else 'public')
 class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
-        self.ids, self.links, self.lang, self.alternates = [], [], None, []
+        self.ids, self.links, self.lang, self.alternates, self.robots = [], [], None, [], ''
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
@@ -22,6 +22,8 @@ class Page(HTMLParser):
             self.ids.append(a['id'])
         if tag == 'html':
             self.lang = a.get('lang')
+        if tag == 'meta' and a.get('name') == 'robots':
+            self.robots = a.get('content', '')
         if tag == 'link' and a.get('rel') == 'alternate':
             self.alternates.append(a.get('hreflang'))
         if tag in ('a', 'link', 'script', 'img'):
@@ -105,4 +107,33 @@ for prefix in ('', 'es/'):
     homepage = (OUTPUT / prefix / 'index.html').read_text()
     assert 'research/pulsar-timing/' not in homepage, 'Link to paused PTA article published'
 assert 'research/pulsar-timing/' not in (OUTPUT / 'sitemap.xml').read_text()
+reading = json.loads((ROOT / 'data/reading.json').read_text())
+reading_path = OUTPUT / 'papers/index.html'
+html = reading_path.read_text()
+page = Page(html)
+assert page.lang == 'en' and not page.alternates
+assert {'noindex', 'nofollow', 'noarchive'} <= set(page.robots.replace(' ', '').split(','))
+assert 'class=language-switch' not in html and 'class="language-switch"' not in html
+assert len(page.ids) == len(set(page.ids)), 'Duplicate reading-list IDs'
+assert {'reading-config', 'paper-search', 'paper-list', 'category-options', 'label-options'} <= set(page.ids)
+assert str(reading['groupId']) in html and 'localhost' not in html and 'livereload' not in html
+for link in page.links:
+    parsed = urlparse(link)
+    if parsed.scheme or parsed.netloc:
+        continue
+    if parsed.fragment and not parsed.path:
+        assert unquote(parsed.fragment) in page.ids, f'Broken reading-list anchor: {link}'
+    elif parsed.path:
+        local = OUTPUT / unquote(parsed.path).lstrip('/')
+        if parsed.path.endswith('/'):
+            local /= 'index.html'
+        assert local.exists(), f'Missing reading-list asset: {link}'
+assert not (OUTPUT / 'es/papers/index.html').exists(), 'Unexpected translated reading page'
+for other in OUTPUT.rglob('*.html'):
+    if other != reading_path:
+        assert '/papers/' not in other.read_text(), f'Unlisted reading page linked in {other}'
+for sitemap in OUTPUT.rglob('*sitemap*.xml'):
+    assert '/papers/' not in sitemap.read_text(), 'Reading list exposed in sitemap'
+assert '/papers/' not in (OUTPUT / 'robots.txt').read_text(), 'Reading route disclosed by robots.txt'
+print('Reading list: English-only unlisted route, noindex, no public links or sitemap entries, and local assets verified.')
 print(f'OK: {len(papers)} papers, six explanations, {len(perspectives)} archived perspectives, bilingual homepage, and no published PTA article.')

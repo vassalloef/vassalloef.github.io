@@ -1,5 +1,39 @@
 # First-version validation
 
+## Zotero reading list — November 19, 2026
+
+- Connected public group 6771640 without authentication. All three original
+  preprints provide titles, authors, abstracts, identifiers, dates, and arXiv
+  categories. Zotero permits cross-origin reads and the conditional-request
+  header used by the page. The live client integration returned HTTP 200 then
+  HTTP 304 on a repeat read, with library version 7.
+- Added the English-only `/papers/` route, excluded from page listings,
+  navigation, and sitemaps, with noindex/nofollow/noarchive metadata. There is
+  no Spanish route or language switch. Existing homepage and family-tree
+  production checks continue to pass, including the homepage's EN/ES links.
+- Ten Node tests cover old/new identifiers, category and label mapping,
+  duplicate versions, combined filtering, missing dates, URL schemes,
+  multi-page libraries, conditional refresh, removed records, rate limiting,
+  and library changes during pagination.
+- In-app browser checks cover live records and math, combined author/category
+  search, sorting, empty-result recovery, and native keyboard access to filters.
+  Abstracts default to hidden and can be opened independently, retaining their
+  state through sorting. Categories default to collapsed. The sidebar follows
+  normal page scrolling without a separate scroll area. Direct paper links
+  focus and scroll the entry below the sticky header.
+- Responsive layouts checked at actual CSS viewport widths of 325, 390,
+  1066, and 1280 pixels. No horizontal overflow remains in the checked
+  reading-page views.
+- Public data is rendered as text. Math uses vendored KaTeX 0.19.1 with trust
+  disabled. Browser-local snapshots provide a fallback; there is no key,
+  password, writing endpoint, or paid service in the site implementation.
+- The user confirmed that saving and syncing a custom tag works; synthetic label
+  mapping and combined label filters also pass the data tests. No Zotero records
+  were modified during development. Network-failure UI fallback was reviewed
+  in code; an actual offline browser session was not simulated.
+- Final build and ten data tests passed on `feat/zotero-reading-list` after the
+  user's review. Publication uses the existing main-branch GitHub Pages workflow.
+
 October 31, 2026. Local preview: http://localhost:1313/
 
 Passed:
